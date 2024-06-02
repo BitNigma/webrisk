@@ -1,0 +1,57 @@
+package index
+
+
+import "websirk/internal/views/components"
+import "websirk/internal/views/content"
+
+templ MainPage(){
+    <html lang="en">
+   <body>
+    @components.Head()
+    @components.Header()
+    @content.IndexPage()
+    @components.Footer()
+    @components.BottomScripts()
+    </body>
+    </html>
+}
+
+
+templ AboutPage(){
+    <html lang="en">
+   <body>
+    @components.Head()
+    @components.Header()
+    @content.About()
+    @components.Footer()
+    @components.BottomScripts()
+    </body>
+    </html>
+}
+
+templ ContactsPage(){
+    <html lang="en">
+   <body>
+    @components.Head()
+    @components.Header()
+    @content.ContactsContent()
+    @components.Footer()
+    @components.BottomScripts()
+    </body>
+    </html>
+}
+
+
+templ TermsPage(){
+    <html lang="en">
+   <body>
+    @components.Head()
+    @components.Header()
+    @content.TermsContent()
+    @components.Footer()
+    @components.BottomScripts()
+    </body>
+    </html>
+}
+
+
