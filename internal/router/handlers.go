@@ -41,10 +41,9 @@ func HandleCard(c *fiber.Ctx) error {
 	})
 }
 
-func HandleCrypto(c *fiber.Ctx) error {
-	return c.Render("./static/terms.html", fiber.Map{
-		"Jonny": "Hello, World!",
-	})
+func HandleWallet(c *fiber.Ctx) error {
+	c.Set("Content-type", "text/html")
+	return index.WalletPage().Render(c.UserContext(), c.Response().BodyWriter())
 }
 
 func HandlePayment(c *fiber.Ctx) error {
@@ -54,9 +53,13 @@ func HandlePayment(c *fiber.Ctx) error {
 }
 
 func HandlePolicy(c *fiber.Ctx) error {
-	return c.Render("./static/terms.html", fiber.Map{
-		"Jonny": "Hello, World!",
-	})
+	c.Set("Content-type", "text/html")
+	return index.PrivacyHanle().Render(c.UserContext(), c.Response().BodyWriter())
+}
+
+func HandleAML(c *fiber.Ctx) error {
+	c.Set("Content-type", "text/html")
+	return index.AMLHanle().Render(c.UserContext(), c.Response().BodyWriter())
 }
 
 func HandleB2C(c *fiber.Ctx) error {

@@ -12,14 +12,15 @@ func Setup(app *fiber.App) {
 	/* Views */
 	app.Get("/", HandleHome)
 	app.Get("/about", HandleAbout)
-	app.Get("/crypto", HandleCrypto)
 	app.Get("/contacts", HandleContacts)
 	app.Get("/terms", HandleTerms)
-	app.Get("/policy", HandlePolicy)
+	app.Get("/privacy", HandlePolicy)
+	app.Get("/fraud", HandleAML)
 	app.Get("/b2b", HandleB2C)
 	app.Get("/b2b", HandleB2B)
 	app.Get("/card", HandleCard)
 	app.Get("/payment", HandlePayment)
+	app.Get("/wallet", HandleWallet)
 	/* Page Not und Management */
 
 	/* Page Not Found Management */
