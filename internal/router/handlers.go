@@ -35,15 +35,29 @@ func HandleTerms(c *fiber.Ctx) error {
 	return index.TermsPage().Render(c.UserContext(), c.Context().Response.BodyWriter())
 }
 
-func HandleCard(c *fiber.Ctx) error {
-	return c.Render("./static/terms.html", fiber.Map{
-		"Jonny": "Hello, World!",
-	})
+func HandlePolicy(c *fiber.Ctx) error {
+	c.Set("Content-type", "text/html")
+	return index.PrivacyHanle().Render(c.UserContext(), c.Response().BodyWriter())
 }
 
 func HandleWallet(c *fiber.Ctx) error {
 	c.Set("Content-type", "text/html")
 	return index.WalletPage().Render(c.UserContext(), c.Response().BodyWriter())
+}
+
+func HandleSecurity(c *fiber.Ctx) error {
+	c.Set("Content-type", "text/html")
+	return index.SecurityHanle().Render(c.UserContext(), c.Response().BodyWriter())
+}
+
+func HandleFraud(c *fiber.Ctx) error {
+	c.Set("Content-type", "text/html")
+	return index.FraudHanle().Render(c.UserContext(), c.Response().BodyWriter())
+}
+
+func HandleCard(c *fiber.Ctx) error {
+	c.Set("Content-type", "text/html")
+	return index.CardPage().Render(c.UserContext(), c.Response().BodyWriter())
 }
 
 func HandlePayment(c *fiber.Ctx) error {
@@ -52,24 +66,24 @@ func HandlePayment(c *fiber.Ctx) error {
 	})
 }
 
-func HandlePolicy(c *fiber.Ctx) error {
-	c.Set("Content-type", "text/html")
-	return index.PrivacyHanle().Render(c.UserContext(), c.Response().BodyWriter())
-}
-
-func HandleAML(c *fiber.Ctx) error {
-	c.Set("Content-type", "text/html")
-	return index.AMLHanle().Render(c.UserContext(), c.Response().BodyWriter())
-}
-
-func HandleB2C(c *fiber.Ctx) error {
+func HandleB2B(c *fiber.Ctx) error {
 	return c.Render("./static/terms.html", fiber.Map{
 		"Jonny": "Hello, World!",
 	})
 }
 
-func HandleB2B(c *fiber.Ctx) error {
-	return c.Render("./static/terms.html", fiber.Map{
+func HandleExchange(c *fiber.Ctx) error {
+	c.Set("Content-type", "text/html")
+	return index.ExchangePage().Render(c.UserContext(), c.Response().BodyWriter())
+}
+
+func HandleMessage(c *fiber.Ctx) error {
+	c.Set("Content-type", "text/html")
+	return index.WalletPage().Render(c.UserContext(), c.Response().BodyWriter())
+}
+
+func HandleFAQ(c *fiber.Ctx) error {
+	return c.Render("./static/page-faq.html", fiber.Map{
 		"Jonny": "Hello, World!",
 	})
 }

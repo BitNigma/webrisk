@@ -68,17 +68,32 @@ templ PrivacyHanle(){
 }
 
 
-templ AMLHanle(){
+templ SecurityHanle(){
     <html lang="en">
    <body>
     @components.Head()
     @components.Header()
-    @content.AMLPolicy()
+    @content.SecurityPolicy()
     @components.Footer()
     @components.BottomScripts()
     </body>
     </html>
 }
+
+
+
+templ FraudHanle(){
+    <html lang="en">
+   <body>
+    @components.Head()
+    @components.Header()
+    @content.FraudPolicy()
+    @components.Footer()
+    @components.BottomScripts()
+    </body>
+    </html>
+}
+
 
 
 templ WalletPage(){
@@ -87,6 +102,32 @@ templ WalletPage(){
     @components.Head()
     @components.Header()
     @content.Wallet()
+    @components.Footer()
+    @components.BottomScripts()
+    </body>
+    </html>
+}
+
+templ ExchangePage(){
+    <html lang="en">
+   <body>
+    @components.Head()
+    @components.Header()
+    @content.Exchange()
+    @components.Footer()
+    @components.BottomScripts()
+    </body>
+    </html>
+}
+
+
+
+templ CardPage(){
+    <html lang="en">
+   <body>
+    @components.Head()
+    @components.Header()
+    @content.Card()
     @components.Footer()
     @components.BottomScripts()
     </body>

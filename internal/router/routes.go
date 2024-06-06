@@ -15,12 +15,15 @@ func Setup(app *fiber.App) {
 	app.Get("/contacts", HandleContacts)
 	app.Get("/terms", HandleTerms)
 	app.Get("/privacy", HandlePolicy)
-	app.Get("/fraud", HandleAML)
-	app.Get("/b2b", HandleB2C)
+	app.Get("/fraud", HandleFraud)
+	app.Get("/security", HandleSecurity)
 	app.Get("/b2b", HandleB2B)
 	app.Get("/card", HandleCard)
 	app.Get("/payment", HandlePayment)
 	app.Get("/wallet", HandleWallet)
+	app.Get("/messenger", HandleMessage)
+	app.Get("/exchange", HandleExchange)
+	app.Get("/faq", HandleFAQ)
 	/* Page Not und Management */
 
 	/* Page Not Found Management */
