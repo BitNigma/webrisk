@@ -21,12 +21,10 @@ func Setup(app *fiber.App) {
 	app.Get("/card", HandleCard)
 	app.Get("/payment", HandlePayment)
 	app.Get("/wallet", HandleWallet)
-	app.Get("/messenger", HandleMessage)
+	app.Get("/payments", HandlePayment)
 	app.Get("/exchange", HandleExchange)
 	app.Get("/faq", HandleFAQ)
 	/* Page Not und Management */
-
-	/* Page Not Found Management */
 
 	app.Use(func(c *fiber.Ctx) error {
 		return c.Status(fiber.StatusNotFound).SendFile("./static/page-error-404.html")

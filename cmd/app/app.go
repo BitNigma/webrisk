@@ -12,22 +12,17 @@ import (
 	"github.com/joho/godotenv"
 )
 
-var err error
-
 func init() {
-
 	err := godotenv.Load()
 	if err != nil {
 		log.Fatal("Error loading .env file")
 	}
-
 }
 
 func Run(cfg *config.Config) error {
-
 	//Server
 	server := server.NewServer(cfg)
-	err = server.Start()
+	err := server.Start()
 	if err != nil {
 		slog.Error("can't start a server %w", err)
 		return err
@@ -42,7 +37,6 @@ func Run(cfg *config.Config) error {
 		slog.Info("app - Run - signal: " + s.String())
 	case err = <-server.Notify():
 		slog.Error("app - Run - httpServer.Notify: %w", err)
-
 	}
 
 	// Shutdown
@@ -50,6 +44,5 @@ func Run(cfg *config.Config) error {
 	if err != nil {
 		slog.Error("app - Run - httpServer.Shoutdown: %w", err)
 	}
-
 	return nil
 }

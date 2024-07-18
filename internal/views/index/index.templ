@@ -8,7 +8,7 @@ templ MainPage(){
     <html lang="en">
    <body>
     @components.Head()
-    @components.Header()
+    @components.Header("b2c")
     @content.IndexPage()
     @components.Footer()
     @components.BottomScripts()
@@ -21,7 +21,7 @@ templ AboutPage(){
     <html lang="en">
    <body>
     @components.Head()
-    @components.Header()
+    @components.Header("b2c")
     @content.About()
     @components.Footer()
     @components.BottomScripts()
@@ -33,7 +33,7 @@ templ ContactsPage(){
     <html lang="en">
    <body>
     @components.Head()
-    @components.Header()
+    @components.Header("b2c")
     @content.ContactsContent()
     @components.Footer()
     @components.BottomScripts()
@@ -46,7 +46,7 @@ templ TermsPage(){
     <html lang="en">
    <body>
     @components.Head()
-    @components.Header()
+    @components.Header("b2c")
     @content.TermsContent()
     @components.Footer()
     @components.BottomScripts()
@@ -59,7 +59,7 @@ templ PrivacyHanle(){
     <html lang="en">
    <body>
     @components.Head()
-    @components.Header()
+    @components.Header("b2c")
     @content.PrivacyPage()
     @components.Footer()
     @components.BottomScripts()
@@ -72,7 +72,7 @@ templ SecurityHanle(){
     <html lang="en">
    <body>
     @components.Head()
-    @components.Header()
+    @components.Header("b2c")
     @content.SecurityPolicy()
     @components.Footer()
     @components.BottomScripts()
@@ -86,7 +86,7 @@ templ FraudHanle(){
     <html lang="en">
    <body>
     @components.Head()
-    @components.Header()
+    @components.Header("b2c")
     @content.FraudPolicy()
     @components.Footer()
     @components.BottomScripts()
@@ -100,7 +100,7 @@ templ WalletPage(){
     <html lang="en">
    <body>
     @components.Head()
-    @components.Header()
+    @components.Header("b2c")
     @content.Wallet()
     @components.Footer()
     @components.BottomScripts()
@@ -112,7 +112,7 @@ templ ExchangePage(){
     <html lang="en">
    <body>
     @components.Head()
-    @components.Header()
+    @components.Header("b2c")
     @content.Exchange()
     @components.Footer()
     @components.BottomScripts()
@@ -126,7 +126,7 @@ templ CardPage(){
     <html lang="en">
    <body>
     @components.Head()
-    @components.Header()
+    @components.Header("b2c")
     @content.Card()
     @components.Footer()
     @components.BottomScripts()
@@ -134,4 +134,28 @@ templ CardPage(){
     </html>
 }
 
+templ B2BPage(){
+    <html lang="en">
+   <body>
+    @components.Head()
+    @components.Header("b2b")
+    @content.B2BContent()
+    @components.Footer()
+    @components.BottomScripts()
+    </body>
+    </html>
+}
+
+
+templ PaymentPage(){
+    <html lang="en">
+   <body>
+    @components.Head()
+    @components.Header("b2b")
+    @content.PayementContent()
+    @components.Footer()
+    @components.BottomScripts()
+    </body>
+    </html>
+}
 

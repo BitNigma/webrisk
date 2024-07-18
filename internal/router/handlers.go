@@ -61,15 +61,13 @@ func HandleCard(c *fiber.Ctx) error {
 }
 
 func HandlePayment(c *fiber.Ctx) error {
-	return c.Render("./static/terms.html", fiber.Map{
-		"Jonny": "Hello, World!",
-	})
+	c.Set("Content-type", "text/html")
+	return index.PaymentPage().Render(c.UserContext(), c.Response().BodyWriter())
 }
 
 func HandleB2B(c *fiber.Ctx) error {
-	return c.Render("./static/terms.html", fiber.Map{
-		"Jonny": "Hello, World!",
-	})
+	c.Set("Content-type", "text/html")
+	return index.B2BPage().Render(c.UserContext(), c.Response().BodyWriter())
 }
 
 func HandleExchange(c *fiber.Ctx) error {
