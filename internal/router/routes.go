@@ -18,10 +18,11 @@ func Setup(app *fiber.App) {
 	app.Get("/fraud", HandleFraud)
 	app.Get("/security", HandleSecurity)
 	app.Get("/b2b", HandleB2B)
-	app.Get("/card", HandleCard)
 	app.Get("/payment", HandlePayment)
 	app.Get("/wallet", HandleWallet)
 	app.Get("/payments", HandlePayment)
+	app.Get("/api", HandleAPI)
+	app.Get("/compliance", HandleCompliance)
 	app.Get("/exchange", HandleExchange)
 	app.Get("/faq", HandleFAQ)
 	/* Page Not und Management */

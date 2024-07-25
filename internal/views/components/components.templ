@@ -1,7 +1,16 @@
 package components
 
 
-templ Header(category string){
+
+var status = ""
+
+func change (status string)string {
+  status = "nav-link my-active"
+  return status
+}
+
+templ Header(category string, url string){
+
 
 <header id="headerWithBSDropdown" class="header header-sticky-top">
   <div class="header-section bg-white">
@@ -54,48 +63,109 @@ templ Header(category string){
             </li>
     </ul>
   }
-  
 
   switch category {
     case "b2c":
- <ul class="navbar-nav">
+ 
+      <ul class="navbar-nav">
+       if url == "wallet" {   
+      <li class="navbar-nav-item">
+            <a class={change(status)} href="/wallet">Wallet</a>
+     </li>
+       }else {
+      <li class="navbar-nav-item">
+            <a class="nav-link" href="/wallet">Wallet</a>
+     </li>
+       }
+      
+      if url == "exchange" {
             <li class="navbar-nav-item">
-              <a class="nav-link" href="/wallet">Wallet</a>
+              <a class={change(status)} href="/exchange">Exchange</a>
             </li>
-
-            <li class="navbar-nav-item">
+          }else {
+             <li class="navbar-nav-item">
               <a class="nav-link" href="/exchange">Exchange</a>
             </li>
+        }
 
-            <li class="navbar-nav-item">
-              <a class="nav-link " href="/card">Card</a>
-            </li>
-            <li class="navbar-nav-item">
-              <a class="nav-link " href="/about">About</a>
-            </li>
+      if url == "about" {
+              <li class="navbar-nav-item">
+              <a class={change(status)} href="/about">About</a>
+            </li>     
+            }else {
+               <li class="navbar-nav-item">
+              <a class="nav-link" href="/about">About</a>
+            </li>  
+            }
+            
 
+      if url == "contacts" {
             <li class="navbar-nav-item">
-              <a class="nav-link " href="/contacts">Contacts</a>
+              <a class={change(status)} href="/contacts">Contacts</a>
             </li>
-
+          }else {
+             <li class="navbar-nav-item">
+              <a class="nav-link" href="/contacts">Contacts</a>
+            </li>
+       }
+            
             
   </ul>
   case "b2b":
-  <ul class="navbar-nav">
+    <ul class="navbar-nav">
+
+          if url == "payments" {
+          <li class="navbar-nav-item">
+              <a class={change(status)} href="/payments">Payments</a>
+            </li>     
+          }else {
             <li class="navbar-nav-item">
               <a class="nav-link" href="/payments">Payments</a>
+            </li> 
+          }
+
+
+           if url == "api" {
+         <li class="navbar-nav-item">
+              <a class={change(status)} href="/api">API & SDK</a>
+            </li>    
+          }else {
+           <li class="navbar-nav-item">
+              <a class="nav-link" href="/api">API & SDK</a>
             </li>
+          }
+
+          if url == "compl"{
             <li class="navbar-nav-item">
-              <a class="nav-link" href="/exchange">API & SDK</a>
+              <a class={change(status)} href="/compliance">Compliance</a>
             </li>
+          }else {
             <li class="navbar-nav-item">
-              <a class="nav-link" href="/card">Compliance</a>
-            </li><li class="navbar-nav-item">
-              <a class="nav-link " href="/about">About</a>
+              <a class="nav-link" href="/compliance">Compliance</a>
             </li>
-            <li class="navbar-nav-item">
-              <a class="nav-link " href="/contacts">Contacts</a>
-            </li>            
+          }
+
+          if url == "about" {
+              <li class="navbar-nav-item">
+              <a class={change(status)} href="/about">About</a>
+            </li>     
+            }else {
+               <li class="navbar-nav-item">
+              <a class="nav-link" href="/about">About</a>
+            </li>  
+            }
+            
+            if url == "contacts" {
+              <li class="navbar-nav-item">
+              <a class={change(status)} href="/contacts">Contacts</a>
+            </li>     
+            }else {
+               <li class="navbar-nav-item">
+              <a class="nav-link" href="/contacts">Contacts</a>
+            </li>  
+            }
+
+                   
   </ul>
   }  
         </div>
@@ -112,7 +182,8 @@ templ Head(){
    
 <head>
   <!-- Title -->
-  <title> KeyHold  - Multi payment solution</title>
+  <title> Paylary  - Multi The WEB 3.0 Financial ecosystem
+free account to everyone</title>
 
   <!-- Required Meta Tags Always Come First -->
   <meta charset="utf-8">
@@ -136,6 +207,7 @@ templ Head(){
 
   <!-- CSS Front Template -->
   <link rel="stylesheet" href="./static/assets/css/theme.min.css">
+  <link rel="stylesheet" href="./static/assets/css/custom.css">
 
 
 
@@ -263,7 +335,7 @@ templ Footer() {
         <ul class="nav nav-sm nav-x-0 nav-white flex-column">
         <li class="nav-item"><a class="nav-link" href="/wallet">Wallet</a></li>
         <li class="nav-item"><a class="nav-link" href="/exchange">Exchange</a></li>
-        <li class="nav-item"><a class="nav-link" href="/card">Card</a></li></ul>
+        </ul>
         <!-- End Nav Link --></div>
     <div class="col-6 col-md-4 col-lg">
       <h5 class="text-white">Resources</h5>

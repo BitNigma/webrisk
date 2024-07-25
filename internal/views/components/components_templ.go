@@ -10,7 +10,14 @@ import "context"
 import "io"
 import "bytes"
 
-func Header(category string) templ.Component {
+var status = ""
+
+func change(status string) string {
+	status = "nav-link my-active"
+	return status
+}
+
+func Header(category string, url string) templ.Component {
 	return templ.ComponentFunc(func(ctx context.Context, templ_7745c5c3_W io.Writer) (templ_7745c5c3_Err error) {
 		templ_7745c5c3_Buffer, templ_7745c5c3_IsBuffer := templ_7745c5c3_W.(*bytes.Buffer)
 		if !templ_7745c5c3_IsBuffer {
@@ -41,12 +48,317 @@ func Header(category string) templ.Component {
 		}
 		switch category {
 		case "b2c":
-			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<ul class=\"navbar-nav\"><li class=\"navbar-nav-item\"><a class=\"nav-link\" href=\"/wallet\">Wallet</a></li><li class=\"navbar-nav-item\"><a class=\"nav-link\" href=\"/exchange\">Exchange</a></li><li class=\"navbar-nav-item\"><a class=\"nav-link \" href=\"/card\">Card</a></li><li class=\"navbar-nav-item\"><a class=\"nav-link \" href=\"/about\">About</a></li><li class=\"navbar-nav-item\"><a class=\"nav-link \" href=\"/contacts\">Contacts</a></li></ul>")
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<ul class=\"navbar-nav\">")
+			if templ_7745c5c3_Err != nil {
+				return templ_7745c5c3_Err
+			}
+			if url == "wallet" {
+				_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<li class=\"navbar-nav-item\">")
+				if templ_7745c5c3_Err != nil {
+					return templ_7745c5c3_Err
+				}
+				var templ_7745c5c3_Var2 = []any{change(status)}
+				templ_7745c5c3_Err = templ.RenderCSSItems(ctx, templ_7745c5c3_Buffer, templ_7745c5c3_Var2...)
+				if templ_7745c5c3_Err != nil {
+					return templ_7745c5c3_Err
+				}
+				_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<a class=\"")
+				if templ_7745c5c3_Err != nil {
+					return templ_7745c5c3_Err
+				}
+				var templ_7745c5c3_Var3 string
+				templ_7745c5c3_Var3, templ_7745c5c3_Err = templ.JoinStringErrs(templ.CSSClasses(templ_7745c5c3_Var2).String())
+				if templ_7745c5c3_Err != nil {
+					return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/views/components/components.templ`, Line: 1, Col: 0}
+				}
+				_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var3))
+				if templ_7745c5c3_Err != nil {
+					return templ_7745c5c3_Err
+				}
+				_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("\" href=\"/wallet\">Wallet</a></li>")
+				if templ_7745c5c3_Err != nil {
+					return templ_7745c5c3_Err
+				}
+			} else {
+				_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<li class=\"navbar-nav-item\"><a class=\"nav-link\" href=\"/wallet\">Wallet</a></li>")
+				if templ_7745c5c3_Err != nil {
+					return templ_7745c5c3_Err
+				}
+			}
+			if url == "exchange" {
+				_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<li class=\"navbar-nav-item\">")
+				if templ_7745c5c3_Err != nil {
+					return templ_7745c5c3_Err
+				}
+				var templ_7745c5c3_Var4 = []any{change(status)}
+				templ_7745c5c3_Err = templ.RenderCSSItems(ctx, templ_7745c5c3_Buffer, templ_7745c5c3_Var4...)
+				if templ_7745c5c3_Err != nil {
+					return templ_7745c5c3_Err
+				}
+				_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<a class=\"")
+				if templ_7745c5c3_Err != nil {
+					return templ_7745c5c3_Err
+				}
+				var templ_7745c5c3_Var5 string
+				templ_7745c5c3_Var5, templ_7745c5c3_Err = templ.JoinStringErrs(templ.CSSClasses(templ_7745c5c3_Var4).String())
+				if templ_7745c5c3_Err != nil {
+					return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/views/components/components.templ`, Line: 1, Col: 0}
+				}
+				_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var5))
+				if templ_7745c5c3_Err != nil {
+					return templ_7745c5c3_Err
+				}
+				_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("\" href=\"/exchange\">Exchange</a></li>")
+				if templ_7745c5c3_Err != nil {
+					return templ_7745c5c3_Err
+				}
+			} else {
+				_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<li class=\"navbar-nav-item\"><a class=\"nav-link\" href=\"/exchange\">Exchange</a></li>")
+				if templ_7745c5c3_Err != nil {
+					return templ_7745c5c3_Err
+				}
+			}
+			if url == "about" {
+				_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<li class=\"navbar-nav-item\">")
+				if templ_7745c5c3_Err != nil {
+					return templ_7745c5c3_Err
+				}
+				var templ_7745c5c3_Var6 = []any{change(status)}
+				templ_7745c5c3_Err = templ.RenderCSSItems(ctx, templ_7745c5c3_Buffer, templ_7745c5c3_Var6...)
+				if templ_7745c5c3_Err != nil {
+					return templ_7745c5c3_Err
+				}
+				_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<a class=\"")
+				if templ_7745c5c3_Err != nil {
+					return templ_7745c5c3_Err
+				}
+				var templ_7745c5c3_Var7 string
+				templ_7745c5c3_Var7, templ_7745c5c3_Err = templ.JoinStringErrs(templ.CSSClasses(templ_7745c5c3_Var6).String())
+				if templ_7745c5c3_Err != nil {
+					return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/views/components/components.templ`, Line: 1, Col: 0}
+				}
+				_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var7))
+				if templ_7745c5c3_Err != nil {
+					return templ_7745c5c3_Err
+				}
+				_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("\" href=\"/about\">About</a></li>")
+				if templ_7745c5c3_Err != nil {
+					return templ_7745c5c3_Err
+				}
+			} else {
+				_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<li class=\"navbar-nav-item\"><a class=\"nav-link\" href=\"/about\">About</a></li>")
+				if templ_7745c5c3_Err != nil {
+					return templ_7745c5c3_Err
+				}
+			}
+			if url == "contacts" {
+				_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<li class=\"navbar-nav-item\">")
+				if templ_7745c5c3_Err != nil {
+					return templ_7745c5c3_Err
+				}
+				var templ_7745c5c3_Var8 = []any{change(status)}
+				templ_7745c5c3_Err = templ.RenderCSSItems(ctx, templ_7745c5c3_Buffer, templ_7745c5c3_Var8...)
+				if templ_7745c5c3_Err != nil {
+					return templ_7745c5c3_Err
+				}
+				_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<a class=\"")
+				if templ_7745c5c3_Err != nil {
+					return templ_7745c5c3_Err
+				}
+				var templ_7745c5c3_Var9 string
+				templ_7745c5c3_Var9, templ_7745c5c3_Err = templ.JoinStringErrs(templ.CSSClasses(templ_7745c5c3_Var8).String())
+				if templ_7745c5c3_Err != nil {
+					return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/views/components/components.templ`, Line: 1, Col: 0}
+				}
+				_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var9))
+				if templ_7745c5c3_Err != nil {
+					return templ_7745c5c3_Err
+				}
+				_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("\" href=\"/contacts\">Contacts</a></li>")
+				if templ_7745c5c3_Err != nil {
+					return templ_7745c5c3_Err
+				}
+			} else {
+				_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<li class=\"navbar-nav-item\"><a class=\"nav-link\" href=\"/contacts\">Contacts</a></li>")
+				if templ_7745c5c3_Err != nil {
+					return templ_7745c5c3_Err
+				}
+			}
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</ul>")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
 		case "b2b":
-			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<ul class=\"navbar-nav\"><li class=\"navbar-nav-item\"><a class=\"nav-link\" href=\"/payments\">Payments</a></li><li class=\"navbar-nav-item\"><a class=\"nav-link\" href=\"/exchange\">API & SDK</a></li><li class=\"navbar-nav-item\"><a class=\"nav-link\" href=\"/card\">Compliance</a></li><li class=\"navbar-nav-item\"><a class=\"nav-link \" href=\"/about\">About</a></li><li class=\"navbar-nav-item\"><a class=\"nav-link \" href=\"/contacts\">Contacts</a></li></ul>")
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<ul class=\"navbar-nav\">")
+			if templ_7745c5c3_Err != nil {
+				return templ_7745c5c3_Err
+			}
+			if url == "payments" {
+				_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<li class=\"navbar-nav-item\">")
+				if templ_7745c5c3_Err != nil {
+					return templ_7745c5c3_Err
+				}
+				var templ_7745c5c3_Var10 = []any{change(status)}
+				templ_7745c5c3_Err = templ.RenderCSSItems(ctx, templ_7745c5c3_Buffer, templ_7745c5c3_Var10...)
+				if templ_7745c5c3_Err != nil {
+					return templ_7745c5c3_Err
+				}
+				_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<a class=\"")
+				if templ_7745c5c3_Err != nil {
+					return templ_7745c5c3_Err
+				}
+				var templ_7745c5c3_Var11 string
+				templ_7745c5c3_Var11, templ_7745c5c3_Err = templ.JoinStringErrs(templ.CSSClasses(templ_7745c5c3_Var10).String())
+				if templ_7745c5c3_Err != nil {
+					return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/views/components/components.templ`, Line: 1, Col: 0}
+				}
+				_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var11))
+				if templ_7745c5c3_Err != nil {
+					return templ_7745c5c3_Err
+				}
+				_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("\" href=\"/payments\">Payments</a></li>")
+				if templ_7745c5c3_Err != nil {
+					return templ_7745c5c3_Err
+				}
+			} else {
+				_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<li class=\"navbar-nav-item\"><a class=\"nav-link\" href=\"/payments\">Payments</a></li>")
+				if templ_7745c5c3_Err != nil {
+					return templ_7745c5c3_Err
+				}
+			}
+			if url == "api" {
+				_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<li class=\"navbar-nav-item\">")
+				if templ_7745c5c3_Err != nil {
+					return templ_7745c5c3_Err
+				}
+				var templ_7745c5c3_Var12 = []any{change(status)}
+				templ_7745c5c3_Err = templ.RenderCSSItems(ctx, templ_7745c5c3_Buffer, templ_7745c5c3_Var12...)
+				if templ_7745c5c3_Err != nil {
+					return templ_7745c5c3_Err
+				}
+				_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<a class=\"")
+				if templ_7745c5c3_Err != nil {
+					return templ_7745c5c3_Err
+				}
+				var templ_7745c5c3_Var13 string
+				templ_7745c5c3_Var13, templ_7745c5c3_Err = templ.JoinStringErrs(templ.CSSClasses(templ_7745c5c3_Var12).String())
+				if templ_7745c5c3_Err != nil {
+					return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/views/components/components.templ`, Line: 1, Col: 0}
+				}
+				_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var13))
+				if templ_7745c5c3_Err != nil {
+					return templ_7745c5c3_Err
+				}
+				_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("\" href=\"/api\">API & SDK</a></li>")
+				if templ_7745c5c3_Err != nil {
+					return templ_7745c5c3_Err
+				}
+			} else {
+				_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<li class=\"navbar-nav-item\"><a class=\"nav-link\" href=\"/api\">API & SDK</a></li>")
+				if templ_7745c5c3_Err != nil {
+					return templ_7745c5c3_Err
+				}
+			}
+			if url == "compl" {
+				_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<li class=\"navbar-nav-item\">")
+				if templ_7745c5c3_Err != nil {
+					return templ_7745c5c3_Err
+				}
+				var templ_7745c5c3_Var14 = []any{change(status)}
+				templ_7745c5c3_Err = templ.RenderCSSItems(ctx, templ_7745c5c3_Buffer, templ_7745c5c3_Var14...)
+				if templ_7745c5c3_Err != nil {
+					return templ_7745c5c3_Err
+				}
+				_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<a class=\"")
+				if templ_7745c5c3_Err != nil {
+					return templ_7745c5c3_Err
+				}
+				var templ_7745c5c3_Var15 string
+				templ_7745c5c3_Var15, templ_7745c5c3_Err = templ.JoinStringErrs(templ.CSSClasses(templ_7745c5c3_Var14).String())
+				if templ_7745c5c3_Err != nil {
+					return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/views/components/components.templ`, Line: 1, Col: 0}
+				}
+				_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var15))
+				if templ_7745c5c3_Err != nil {
+					return templ_7745c5c3_Err
+				}
+				_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("\" href=\"/compliance\">Compliance</a></li>")
+				if templ_7745c5c3_Err != nil {
+					return templ_7745c5c3_Err
+				}
+			} else {
+				_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<li class=\"navbar-nav-item\"><a class=\"nav-link\" href=\"/compliance\">Compliance</a></li>")
+				if templ_7745c5c3_Err != nil {
+					return templ_7745c5c3_Err
+				}
+			}
+			if url == "about" {
+				_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<li class=\"navbar-nav-item\">")
+				if templ_7745c5c3_Err != nil {
+					return templ_7745c5c3_Err
+				}
+				var templ_7745c5c3_Var16 = []any{change(status)}
+				templ_7745c5c3_Err = templ.RenderCSSItems(ctx, templ_7745c5c3_Buffer, templ_7745c5c3_Var16...)
+				if templ_7745c5c3_Err != nil {
+					return templ_7745c5c3_Err
+				}
+				_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<a class=\"")
+				if templ_7745c5c3_Err != nil {
+					return templ_7745c5c3_Err
+				}
+				var templ_7745c5c3_Var17 string
+				templ_7745c5c3_Var17, templ_7745c5c3_Err = templ.JoinStringErrs(templ.CSSClasses(templ_7745c5c3_Var16).String())
+				if templ_7745c5c3_Err != nil {
+					return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/views/components/components.templ`, Line: 1, Col: 0}
+				}
+				_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var17))
+				if templ_7745c5c3_Err != nil {
+					return templ_7745c5c3_Err
+				}
+				_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("\" href=\"/about\">About</a></li>")
+				if templ_7745c5c3_Err != nil {
+					return templ_7745c5c3_Err
+				}
+			} else {
+				_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<li class=\"navbar-nav-item\"><a class=\"nav-link\" href=\"/about\">About</a></li>")
+				if templ_7745c5c3_Err != nil {
+					return templ_7745c5c3_Err
+				}
+			}
+			if url == "contacts" {
+				_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<li class=\"navbar-nav-item\">")
+				if templ_7745c5c3_Err != nil {
+					return templ_7745c5c3_Err
+				}
+				var templ_7745c5c3_Var18 = []any{change(status)}
+				templ_7745c5c3_Err = templ.RenderCSSItems(ctx, templ_7745c5c3_Buffer, templ_7745c5c3_Var18...)
+				if templ_7745c5c3_Err != nil {
+					return templ_7745c5c3_Err
+				}
+				_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<a class=\"")
+				if templ_7745c5c3_Err != nil {
+					return templ_7745c5c3_Err
+				}
+				var templ_7745c5c3_Var19 string
+				templ_7745c5c3_Var19, templ_7745c5c3_Err = templ.JoinStringErrs(templ.CSSClasses(templ_7745c5c3_Var18).String())
+				if templ_7745c5c3_Err != nil {
+					return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/views/components/components.templ`, Line: 1, Col: 0}
+				}
+				_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var19))
+				if templ_7745c5c3_Err != nil {
+					return templ_7745c5c3_Err
+				}
+				_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("\" href=\"/contacts\">Contacts</a></li>")
+				if templ_7745c5c3_Err != nil {
+					return templ_7745c5c3_Err
+				}
+			} else {
+				_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<li class=\"navbar-nav-item\"><a class=\"nav-link\" href=\"/contacts\">Contacts</a></li>")
+				if templ_7745c5c3_Err != nil {
+					return templ_7745c5c3_Err
+				}
+			}
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</ul>")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
@@ -70,12 +382,12 @@ func Head() templ.Component {
 			defer templ.ReleaseBuffer(templ_7745c5c3_Buffer)
 		}
 		ctx = templ.InitializeContext(ctx)
-		templ_7745c5c3_Var2 := templ.GetChildren(ctx)
-		if templ_7745c5c3_Var2 == nil {
-			templ_7745c5c3_Var2 = templ.NopComponent
+		templ_7745c5c3_Var20 := templ.GetChildren(ctx)
+		if templ_7745c5c3_Var20 == nil {
+			templ_7745c5c3_Var20 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<head><!-- Title --><title>KeyHold  - Multi payment solution</title><!-- Required Meta Tags Always Come First --><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\"><!-- Favicon --><link rel=\"shortcut icon\" href=\"./static/assets/favicon.ico\"><!-- Font --><link href=\"https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&amp;display=swap\" rel=\"stylesheet\"><!-- CSS Implementing Plugins --><link rel=\"stylesheet\" href=\"./static/assets/vendor/fontawesome/css/all.min.css\"><link rel=\"stylesheet\" href=\"./static/assets/vendor/hs-mega-menu/dist/hs-mega-menu.min.css\"><!-- CSS Implementing Plugins --><link rel=\"stylesheet\" href=\"./static/assets/vendor/fontawesome/css/all.min.css\"><link rel=\"stylesheet\" href=\"./static/assets/vendor/@fancyapps/fancybox/dist/jquery.fancybox.min.css\"><link rel=\"stylesheet\" href=\"./static/assets/vendor/aos/dist/aos.css\"><link rel=\"stylesheet\" href=\"./static/assets/vendor/slick-carousel/slick/slick.css\"><!-- CSS Front Template --><link rel=\"stylesheet\" href=\"./static/assets/css/theme.min.css\"></head>")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<head><!-- Title --><title>Paylary  - Multi The WEB 3.0 Financial ecosystem free account to everyone</title><!-- Required Meta Tags Always Come First --><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\"><!-- Favicon --><link rel=\"shortcut icon\" href=\"./static/assets/favicon.ico\"><!-- Font --><link href=\"https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&amp;display=swap\" rel=\"stylesheet\"><!-- CSS Implementing Plugins --><link rel=\"stylesheet\" href=\"./static/assets/vendor/fontawesome/css/all.min.css\"><link rel=\"stylesheet\" href=\"./static/assets/vendor/hs-mega-menu/dist/hs-mega-menu.min.css\"><!-- CSS Implementing Plugins --><link rel=\"stylesheet\" href=\"./static/assets/vendor/fontawesome/css/all.min.css\"><link rel=\"stylesheet\" href=\"./static/assets/vendor/@fancyapps/fancybox/dist/jquery.fancybox.min.css\"><link rel=\"stylesheet\" href=\"./static/assets/vendor/aos/dist/aos.css\"><link rel=\"stylesheet\" href=\"./static/assets/vendor/slick-carousel/slick/slick.css\"><!-- CSS Front Template --><link rel=\"stylesheet\" href=\"./static/assets/css/theme.min.css\"><link rel=\"stylesheet\" href=\"./static/assets/css/custom.css\"></head>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -94,9 +406,9 @@ func BottomScripts() templ.Component {
 			defer templ.ReleaseBuffer(templ_7745c5c3_Buffer)
 		}
 		ctx = templ.InitializeContext(ctx)
-		templ_7745c5c3_Var3 := templ.GetChildren(ctx)
-		if templ_7745c5c3_Var3 == nil {
-			templ_7745c5c3_Var3 = templ.NopComponent
+		templ_7745c5c3_Var21 := templ.GetChildren(ctx)
+		if templ_7745c5c3_Var21 == nil {
+			templ_7745c5c3_Var21 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
 		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<!-- Go to Top --><a class=\"js-go-to go-to position-fixed\" href=\"javascript:;\" style=\"visibility: hidden;\" data-hs-go-to-options=\"{\n       &#34;offsetTop&#34;: 700,\n       &#34;position&#34;: {\n         &#34;init&#34;: {\n           &#34;right&#34;: 15\n         },\n         &#34;show&#34;: {\n           &#34;bottom&#34;: 15\n         },\n         &#34;hide&#34;: {\n           &#34;bottom&#34;: -15\n         }\n       }\n     }\"><i class=\"fas fa-angle-up\"></i></a><!-- End Go to Top --><!-- JS Global Compulsory  --><script src=\"./static/assets/vendor/jquery/dist/jquery.min.js\"></script><script src=\"./static/assets/vendor/jquery-migrate/dist/jquery-migrate.min.js\"></script><script src=\"./static/assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js\"></script><!-- JS Implementing Plugins --><script src=\"./static/assets/vendor/hs-header/dist/hs-header.min.js\"></script><script src=\"./static/assets/vendor/hs-go-to/dist/hs-go-to.min.js\"></script><script src=\"./static/assets/vendor/hs-unfold/dist/hs-unfold.min.js\"></script><script src=\"./static/assets/vendor/hs-mega-menu/dist/hs-mega-menu.min.js\"></script><script src=\"./static/assets/vendor/hs-show-animation/dist/hs-show-animation.min.js\"></script><script src=\"./static/assets/vendor/jquery-validation/dist/jquery.validate.min.js\"></script><!-- JS Front --><script src=\"./static/assets/js/theme.min.js\"></script><!-- JS Plugins Init. --><script>\n    $(document).on('ready', function () {\n      // INITIALIZATION OF HEADER\n      // =======================================================\n      var header = new HSHeader($('#header')).init();\n\n\n      // INITIALIZATION OF MEGA MENU\n      // =======================================================\n      var megaMenu = new HSMegaMenu($('.js-mega-menu'), {\n        desktop: {\n          position: 'left'\n        }\n      }).init();\n\n\n      // INITIALIZATION OF UNFOLD\n      // =======================================================\n      var unfold = new HSUnfold('.js-hs-unfold-invoker').init();\n\n\n      // INITIALIZATION OF SHOW ANIMATIONS\n      // =======================================================\n      $('.js-animation-link').each(function () {\n        var showAnimation = new HSShowAnimation($(this)).init();\n      });\n\n\n      // INITIALIZATION OF FORM VALIDATION\n      // =======================================================\n      $('.js-validate').each(function() {\n        $.HSCore.components.HSValidation.init($(this), {\n          rules: {\n            confirmPassword: {\n              equalTo: '#signupPassword'\n            }\n          }\n        });\n      });\n\n\n      // INITIALIZATION OF GO TO\n      // =======================================================\n      $('.js-go-to').each(function () {\n        var goTo = new HSGoTo($(this)).init();\n      });\n    });\n  </script><!-- IE Support --><script>\n    if (/MSIE \\d|Trident.*rv:/.test(navigator.userAgent)) document.write('<script src=\"./static/assets/vendor/babel-polyfill/dist/polyfill.js\"><\\/script>');\n  </script>")
@@ -118,12 +430,12 @@ func Footer() templ.Component {
 			defer templ.ReleaseBuffer(templ_7745c5c3_Buffer)
 		}
 		ctx = templ.InitializeContext(ctx)
-		templ_7745c5c3_Var4 := templ.GetChildren(ctx)
-		if templ_7745c5c3_Var4 == nil {
-			templ_7745c5c3_Var4 = templ.NopComponent
+		templ_7745c5c3_Var22 := templ.GetChildren(ctx)
+		if templ_7745c5c3_Var22 == nil {
+			templ_7745c5c3_Var22 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<footer class=\"bg-dark\"><div class=\"container\"><div class=\"space-top-2 space-bottom-1 space-bottom-lg-2\"><div class=\"row justify-content-lg-between\"><div class=\"col-lg-4 ml-lg-auto mb-5 mb-lg-0\"><!-- Logo --><!-- End Logo --><!-- Nav Link --><ul class=\"nav nav-sm nav-x-0 nav-white flex-column\"><li class=\"nav-item\"><span class=\"media\"><span class=\"text-white\">Paylary <i class=\"far fa-copyright\"></i> 2024</span></span></li><li class=\"nav-item\"><span class=\"media\"><span class=\"text-white\">support@paylary.com </span></span></li></ul><!-- End Nav Link --></div><div class=\"col-6 col-md-4 col-lg mb-5 mb-lg-0\"><h5 class=\"text-white\">Company</h5><!-- Nav Link --><ul class=\"nav nav-sm nav-x-0 nav-white flex-column\"><li class=\"nav-item\"><a class=\"nav-link\" href=\"/about\">About</a></li><li class=\"nav-item\"><a class=\"nav-link\" href=\"/contacts\">Contacts</a></li><li class=\"nav-item\"><a class=\"nav-link\" href=\"/\">B2C</a></li><li class=\"nav-item\"><a class=\"nav-link\" href=\"/b2b\">B2B</a></li><li class=\"nav-item\"></li></ul><!-- End Nav Link --></div><div class=\"col-6 col-md-4 col-lg mb-5 mb-lg-0\"><h5 class=\"text-white\">Features</h5><!-- Nav Link --><ul class=\"nav nav-sm nav-x-0 nav-white flex-column\"><li class=\"nav-item\"><a class=\"nav-link\" href=\"/wallet\">Wallet</a></li><li class=\"nav-item\"><a class=\"nav-link\" href=\"/exchange\">Exchange</a></li><li class=\"nav-item\"><a class=\"nav-link\" href=\"/card\">Card</a></li></ul><!-- End Nav Link --></div><div class=\"col-6 col-md-4 col-lg\"><h5 class=\"text-white\">Resources</h5><!-- Nav Link --><ul class=\"nav nav-sm nav-x-0 nav-white flex-column\"><li class=\"nav-item\"><a class=\"nav-link\" href=\"/contacts\">Support</a></li><li class=\"nav-item\"><a class=\"nav-link\" href=\"/security\">Security</a></li></ul><!-- End Nav Link --></div></div></div><hr class=\"opacity-xs my-0\"><div class=\"space-1\"><div class=\"row align-items-md-center mb-7\"><div class=\"col-md-6 mb-4 mb-md-0\"><!-- Nav Link --><ul class=\"nav nav-sm nav-white nav-x-sm align-items-center\"><li class=\"nav-item\"><a class=\"nav-link\" href=\"/privacy\">Privacy &amp; Policy</a></li><li class=\"nav-item opacity mx-3\">/</li><li class=\"nav-item\"><a class=\"nav-link\" href=\"/terms\">Terms &amp; Conditions</a></li><li class=\"nav-item opacity mx-3\">/</li><li class=\"nav-item\"><a class=\"nav-link\" href=\"/fraud\">Anti-fraud Policy</a></li></ul><!-- End Nav Link --></div><div class=\"col-md-6 text-md-right\"><ul class=\"list-inline mb-0\"><!-- Social Networks --><li class=\"list-inline-item\"><a class=\"btn btn-xs btn-icon btn-soft-light\" href=\"#\"><i class=\"fab fa-medium\"></i></a></li><li class=\"list-inline-item\"><a class=\"btn btn-xs btn-icon btn-soft-light\" href=\"#\"><i class=\"fab fa-discord\"></i></a></li><li class=\"list-inline-item\"><a class=\"btn btn-xs btn-icon btn-soft-light\" href=\"#\"><i class=\"fab fa-twitter\"></i></a></li><li class=\"list-inline-item\"><a class=\"btn btn-xs btn-icon btn-soft-light\" href=\"#\"><i class=\"fab fa-github\"></i></a></li><!-- End Social Networks --></ul></div></div></div></div></footer>")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<footer class=\"bg-dark\"><div class=\"container\"><div class=\"space-top-2 space-bottom-1 space-bottom-lg-2\"><div class=\"row justify-content-lg-between\"><div class=\"col-lg-4 ml-lg-auto mb-5 mb-lg-0\"><!-- Logo --><!-- End Logo --><!-- Nav Link --><ul class=\"nav nav-sm nav-x-0 nav-white flex-column\"><li class=\"nav-item\"><span class=\"media\"><span class=\"text-white\">Paylary <i class=\"far fa-copyright\"></i> 2024</span></span></li><li class=\"nav-item\"><span class=\"media\"><span class=\"text-white\">support@paylary.com </span></span></li></ul><!-- End Nav Link --></div><div class=\"col-6 col-md-4 col-lg mb-5 mb-lg-0\"><h5 class=\"text-white\">Company</h5><!-- Nav Link --><ul class=\"nav nav-sm nav-x-0 nav-white flex-column\"><li class=\"nav-item\"><a class=\"nav-link\" href=\"/about\">About</a></li><li class=\"nav-item\"><a class=\"nav-link\" href=\"/contacts\">Contacts</a></li><li class=\"nav-item\"><a class=\"nav-link\" href=\"/\">B2C</a></li><li class=\"nav-item\"><a class=\"nav-link\" href=\"/b2b\">B2B</a></li><li class=\"nav-item\"></li></ul><!-- End Nav Link --></div><div class=\"col-6 col-md-4 col-lg mb-5 mb-lg-0\"><h5 class=\"text-white\">Features</h5><!-- Nav Link --><ul class=\"nav nav-sm nav-x-0 nav-white flex-column\"><li class=\"nav-item\"><a class=\"nav-link\" href=\"/wallet\">Wallet</a></li><li class=\"nav-item\"><a class=\"nav-link\" href=\"/exchange\">Exchange</a></li></ul><!-- End Nav Link --></div><div class=\"col-6 col-md-4 col-lg\"><h5 class=\"text-white\">Resources</h5><!-- Nav Link --><ul class=\"nav nav-sm nav-x-0 nav-white flex-column\"><li class=\"nav-item\"><a class=\"nav-link\" href=\"/contacts\">Support</a></li><li class=\"nav-item\"><a class=\"nav-link\" href=\"/security\">Security</a></li></ul><!-- End Nav Link --></div></div></div><hr class=\"opacity-xs my-0\"><div class=\"space-1\"><div class=\"row align-items-md-center mb-7\"><div class=\"col-md-6 mb-4 mb-md-0\"><!-- Nav Link --><ul class=\"nav nav-sm nav-white nav-x-sm align-items-center\"><li class=\"nav-item\"><a class=\"nav-link\" href=\"/privacy\">Privacy &amp; Policy</a></li><li class=\"nav-item opacity mx-3\">/</li><li class=\"nav-item\"><a class=\"nav-link\" href=\"/terms\">Terms &amp; Conditions</a></li><li class=\"nav-item opacity mx-3\">/</li><li class=\"nav-item\"><a class=\"nav-link\" href=\"/fraud\">Anti-fraud Policy</a></li></ul><!-- End Nav Link --></div><div class=\"col-md-6 text-md-right\"><ul class=\"list-inline mb-0\"><!-- Social Networks --><li class=\"list-inline-item\"><a class=\"btn btn-xs btn-icon btn-soft-light\" href=\"#\"><i class=\"fab fa-medium\"></i></a></li><li class=\"list-inline-item\"><a class=\"btn btn-xs btn-icon btn-soft-light\" href=\"#\"><i class=\"fab fa-discord\"></i></a></li><li class=\"list-inline-item\"><a class=\"btn btn-xs btn-icon btn-soft-light\" href=\"#\"><i class=\"fab fa-twitter\"></i></a></li><li class=\"list-inline-item\"><a class=\"btn btn-xs btn-icon btn-soft-light\" href=\"#\"><i class=\"fab fa-github\"></i></a></li><!-- End Social Networks --></ul></div></div></div></div></footer>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}

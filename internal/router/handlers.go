@@ -55,9 +55,14 @@ func HandleFraud(c *fiber.Ctx) error {
 	return index.FraudHanle().Render(c.UserContext(), c.Response().BodyWriter())
 }
 
-func HandleCard(c *fiber.Ctx) error {
+func HandleAPI(c *fiber.Ctx) error {
 	c.Set("Content-type", "text/html")
-	return index.CardPage().Render(c.UserContext(), c.Response().BodyWriter())
+	return index.APIHandle().Render(c.UserContext(), c.Response().BodyWriter())
+}
+
+func HandleCompliance(c *fiber.Ctx) error {
+	c.Set("Content-type", "text/html")
+	return index.HandleCompliance().Render(c.UserContext(), c.Response().BodyWriter())
 }
 
 func HandlePayment(c *fiber.Ctx) error {
