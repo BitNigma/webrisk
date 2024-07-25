@@ -36,18 +36,6 @@ func Header(category string, url string) templ.Component {
 		}
 		switch category {
 		case "b2c":
-			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<ul class=\"nav nav-segment\" id=\"navTab3\" role=\"tablist\"><li role=\"presentation\" class=\"nav-item\"><a id=\"nav-resultTab3\" href=\"/\" data-bs-toggle=\"pill\" data-bs-target=\"#nav-result3\" role=\"tab\" aria-controls=\"nav-result3\" aria-selected=\"true\" class=\"nav-link active pl-4 pr-4\">B2C</a></li><li class=\"nav-item\" role=\"presentation\"><a id=\"nav-htmlTab3\" href=\"/b2b\" data-bs-toggle=\"pill\" data-bs-target=\"#nav-html3\" role=\"tab\" aria-controls=\"nav-html3\" aria-selected=\"false\" tabindex=\"-1\" class=\"nav-link pl-4 pr-4\">B2B</a></li></ul>")
-			if templ_7745c5c3_Err != nil {
-				return templ_7745c5c3_Err
-			}
-		case "b2b":
-			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<ul class=\"nav nav-segment\" id=\"navTab3\" role=\"tablist\"><li role=\"presentation\" class=\"nav-item\"><a id=\"nav-resultTab3\" href=\"/\" data-bs-toggle=\"pill\" data-bs-target=\"#nav-result3\" role=\"tab\" aria-controls=\"nav-result3\" aria-selected=\"true\" class=\"nav-link  pl-4 pr-4\">B2C</a></li><li class=\"nav-item\" role=\"presentation\"><a id=\"nav-htmlTab3\" href=\"/b2b\" data-bs-toggle=\"pill\" data-bs-target=\"#nav-html3\" role=\"tab\" aria-controls=\"nav-html3\" aria-selected=\"false\" tabindex=\"-1\" class=\"nav-link active pl-4 pr-4\">B2B</a></li></ul>")
-			if templ_7745c5c3_Err != nil {
-				return templ_7745c5c3_Err
-			}
-		}
-		switch category {
-		case "b2c":
 			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<ul class=\"navbar-nav\">")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
