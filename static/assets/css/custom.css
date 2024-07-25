@@ -20,6 +20,10 @@
         padding-top: 0px !important;
         margin-top: 4.5rem !important;
     }
+    .nonpadding {
+        padding-top: 0px !important;
+        margin-top: 0px !important;
+    }
 }
 
 
@@ -28,6 +32,11 @@
     .mobile {
         padding-top: 0px !important;
         margin-top: 4.5rem !important;
+    }
+
+    .nonpadding {
+        padding-top: 0px !important;
+        margin-top: 0px !important;
     }
 }
 
@@ -36,12 +45,22 @@
         padding-top: 0px !important;
         margin-top: 4.5rem !important;
     }
+
+    .nonpadding {
+        padding-top: 0px !important;
+        margin-top: 0px !important;
+    }
 }
 
 @media only screen and (max-width: 762px) {
     .mobile {
         padding-top: 0px !important;
         margin-top: 4.5rem !important;
+    }
+
+    .nonpadding {
+        padding-top: 0px !important;
+        margin-top: 0px !important;
     }
 
 }
@@ -52,12 +71,22 @@
         margin-top: 4.5rem !important;
     }
 
+    .nonpadding {
+        padding-top: 0px !important;
+        margin-top: 0px !important;
+    }
+
 }
 
 @media only screen and (max-width: 375px) {
     .mobile {
         padding-top: 0px !important;
         margin-top: 4.5rem !important;
+    }
+
+    .nonpadding {
+        padding-top: 0px !important;
+        margin-top: 0px !important;
     }
 
 }
