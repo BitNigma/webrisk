@@ -17,8 +17,6 @@ func change(status string) string {
 	return status
 }
 
-/*
-
 func Header(category string, url string) templ.Component {
 	return templ.ComponentFunc(func(ctx context.Context, templ_7745c5c3_W io.Writer) (templ_7745c5c3_Err error) {
 		templ_7745c5c3_Buffer, templ_7745c5c3_IsBuffer := templ_7745c5c3_W.(*bytes.Buffer)
@@ -37,17 +35,20 @@ func Header(category string, url string) templ.Component {
 			return templ_7745c5c3_Err
 		}
 		switch category {
-		case "b2c":			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<ul class=\"nav nav-segment\" id=\"navTab3\" role=\"tablist\"><li role=\"presentation\" class=\"nav-item\"><a id=\"nav-resultTab3\" href=\"/\" data-bs-toggle=\"pill\" data-bs-target=\"#nav-result3\" role=\"tab\" aria-controls=\"nav-result3\" aria-selected=\"true\" class=\"nav-link active pl-4 pr-4\">B2C</a></li><li class=\"nav-item\" role=\"presentation\"><a id=\"nav-htmlTab3\" href=\"/b2b\" data-bs-toggle=\"pill\" data-bs-target=\"#nav-html3\" role=\"tab\" aria-controls=\"nav-html3\" aria-selected=\"false\" tabindex=\"-1\" class=\"nav-link pl-4 pr-4\">B2B</a></li></ul>")
-		if templ_7745c5c3_Err != nil {
-			return templ_7745c5c3_Err
-		}
-		case "b2b":			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<ul class=\"nav nav-segment\" id=\"navTab3\" role=\"tablist\"><li role=\"presentation\" class=\"nav-item\"><a id=\"nav-resultTab3\" href=\"/\" data-bs-toggle=\"pill\" data-bs-target=\"#nav-result3\" role=\"tab\" aria-controls=\"nav-result3\" aria-selected=\"true\" class=\"nav-link  pl-4 pr-4\">B2C</a></li><li class=\"nav-item\" role=\"presentation\"><a id=\"nav-htmlTab3\" href=\"/b2b\" data-bs-toggle=\"pill\" data-bs-target=\"#nav-html3\" role=\"tab\" aria-controls=\"nav-html3\" aria-selected=\"false\" tabindex=\"-1\" class=\"nav-link active pl-4 pr-4\">B2B</a></li></ul>")
-		if templ_7745c5c3_Err != nil {
-			return templ_7745c5c3_Err
-		}
+		case "b2c":
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<ul class=\"nav nav-segment\" id=\"navTab3\" role=\"tablist\"><li role=\"presentation\" class=\"nav-item\"><a id=\"nav-resultTab3\" href=\"/\" data-bs-toggle=\"pill\" data-bs-target=\"#nav-result3\" role=\"tab\" aria-controls=\"nav-result3\" aria-selected=\"true\" class=\"nav-link active pl-4 pr-4\">B2C</a></li><li class=\"nav-item\" role=\"presentation\"><a id=\"nav-htmlTab3\" href=\"/b2b\" data-bs-toggle=\"pill\" data-bs-target=\"#nav-html3\" role=\"tab\" aria-controls=\"nav-html3\" aria-selected=\"false\" tabindex=\"-1\" class=\"nav-link pl-4 pr-4\">B2B</a></li></ul>")
+			if templ_7745c5c3_Err != nil {
+				return templ_7745c5c3_Err
+			}
+		case "b2b":
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<ul class=\"nav nav-segment\" id=\"navTab3\" role=\"tablist\"><li role=\"presentation\" class=\"nav-item\"><a id=\"nav-resultTab3\" href=\"/\" data-bs-toggle=\"pill\" data-bs-target=\"#nav-result3\" role=\"tab\" aria-controls=\"nav-result3\" aria-selected=\"true\" class=\"nav-link  pl-4 pr-4\">B2C</a></li><li class=\"nav-item\" role=\"presentation\"><a id=\"nav-htmlTab3\" href=\"/b2b\" data-bs-toggle=\"pill\" data-bs-target=\"#nav-html3\" role=\"tab\" aria-controls=\"nav-html3\" aria-selected=\"false\" tabindex=\"-1\" class=\"nav-link active pl-4 pr-4\">B2B</a></li></ul>")
+			if templ_7745c5c3_Err != nil {
+				return templ_7745c5c3_Err
+			}
 		}
 		switch category {
-		case "b2c":			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<ul class=\"navbar-nav\">")
+		case "b2c":
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<ul class=\"navbar-nav\">")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
@@ -68,21 +69,21 @@ func Header(category string, url string) templ.Component {
 				var templ_7745c5c3_Var3 string
 				templ_7745c5c3_Var3, templ_7745c5c3_Err = templ.JoinStringErrs(templ.CSSClasses(templ_7745c5c3_Var2).String())
 				if templ_7745c5c3_Err != nil {
-					return	templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/views/components/components.templ`, Line: 1, Col: 0}
+					return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/views/components/components.templ`, Line: 1, Col: 0}
 				}
 				_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var3))
 				if templ_7745c5c3_Err != nil {
 					return templ_7745c5c3_Err
 				}
 				_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("\" href=\"/wallet\">Wallet</a></li>")
-			if templ_7745c5c3_Err != nil {
-				return templ_7745c5c3_Err
-			}
+				if templ_7745c5c3_Err != nil {
+					return templ_7745c5c3_Err
+				}
 			} else {
 				_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<li class=\"navbar-nav-item\"><a class=\"nav-link\" href=\"/wallet\">Wallet</a></li>")
-			if templ_7745c5c3_Err != nil {
-				return templ_7745c5c3_Err
-			}
+				if templ_7745c5c3_Err != nil {
+					return templ_7745c5c3_Err
+				}
 			}
 			if url == "exchange" {
 				_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<li class=\"navbar-nav-item\">")
@@ -101,21 +102,21 @@ func Header(category string, url string) templ.Component {
 				var templ_7745c5c3_Var5 string
 				templ_7745c5c3_Var5, templ_7745c5c3_Err = templ.JoinStringErrs(templ.CSSClasses(templ_7745c5c3_Var4).String())
 				if templ_7745c5c3_Err != nil {
-					return	templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/views/components/components.templ`, Line: 1, Col: 0}
+					return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/views/components/components.templ`, Line: 1, Col: 0}
 				}
 				_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var5))
 				if templ_7745c5c3_Err != nil {
 					return templ_7745c5c3_Err
 				}
 				_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("\" href=\"/exchange\">Exchange</a></li>")
-			if templ_7745c5c3_Err != nil {
-				return templ_7745c5c3_Err
-			}
+				if templ_7745c5c3_Err != nil {
+					return templ_7745c5c3_Err
+				}
 			} else {
 				_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<li class=\"navbar-nav-item\"><a class=\"nav-link\" href=\"/exchange\">Exchange</a></li>")
-			if templ_7745c5c3_Err != nil {
-				return templ_7745c5c3_Err
-			}
+				if templ_7745c5c3_Err != nil {
+					return templ_7745c5c3_Err
+				}
 			}
 			if url == "about" {
 				_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<li class=\"navbar-nav-item\">")
@@ -134,21 +135,21 @@ func Header(category string, url string) templ.Component {
 				var templ_7745c5c3_Var7 string
 				templ_7745c5c3_Var7, templ_7745c5c3_Err = templ.JoinStringErrs(templ.CSSClasses(templ_7745c5c3_Var6).String())
 				if templ_7745c5c3_Err != nil {
-					return	templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/views/components/components.templ`, Line: 1, Col: 0}
+					return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/views/components/components.templ`, Line: 1, Col: 0}
 				}
 				_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var7))
 				if templ_7745c5c3_Err != nil {
 					return templ_7745c5c3_Err
 				}
 				_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("\" href=\"/about\">About</a></li>")
-			if templ_7745c5c3_Err != nil {
-				return templ_7745c5c3_Err
-			}
+				if templ_7745c5c3_Err != nil {
+					return templ_7745c5c3_Err
+				}
 			} else {
 				_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<li class=\"navbar-nav-item\"><a class=\"nav-link\" href=\"/about\">About</a></li>")
-			if templ_7745c5c3_Err != nil {
-				return templ_7745c5c3_Err
-			}
+				if templ_7745c5c3_Err != nil {
+					return templ_7745c5c3_Err
+				}
 			}
 			if url == "contacts" {
 				_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<li class=\"navbar-nav-item\">")
@@ -167,27 +168,28 @@ func Header(category string, url string) templ.Component {
 				var templ_7745c5c3_Var9 string
 				templ_7745c5c3_Var9, templ_7745c5c3_Err = templ.JoinStringErrs(templ.CSSClasses(templ_7745c5c3_Var8).String())
 				if templ_7745c5c3_Err != nil {
-					return	templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/views/components/components.templ`, Line: 1, Col: 0}
+					return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/views/components/components.templ`, Line: 1, Col: 0}
 				}
 				_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var9))
 				if templ_7745c5c3_Err != nil {
 					return templ_7745c5c3_Err
 				}
 				_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("\" href=\"/contacts\">Contacts</a></li>")
-			if templ_7745c5c3_Err != nil {
-				return templ_7745c5c3_Err
-			}
+				if templ_7745c5c3_Err != nil {
+					return templ_7745c5c3_Err
+				}
 			} else {
 				_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<li class=\"navbar-nav-item\"><a class=\"nav-link\" href=\"/contacts\">Contacts</a></li>")
+				if templ_7745c5c3_Err != nil {
+					return templ_7745c5c3_Err
+				}
+			}
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</ul>")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			}
-			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</ul>")
-		if templ_7745c5c3_Err != nil {
-			return templ_7745c5c3_Err
-		}
-		case "b2b":			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<ul class=\"navbar-nav\">")
+		case "b2b":
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<ul class=\"navbar-nav\">")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
@@ -208,21 +210,21 @@ func Header(category string, url string) templ.Component {
 				var templ_7745c5c3_Var11 string
 				templ_7745c5c3_Var11, templ_7745c5c3_Err = templ.JoinStringErrs(templ.CSSClasses(templ_7745c5c3_Var10).String())
 				if templ_7745c5c3_Err != nil {
-					return	templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/views/components/components.templ`, Line: 1, Col: 0}
+					return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/views/components/components.templ`, Line: 1, Col: 0}
 				}
 				_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var11))
 				if templ_7745c5c3_Err != nil {
 					return templ_7745c5c3_Err
 				}
 				_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("\" href=\"/payments\">Payments</a></li>")
-			if templ_7745c5c3_Err != nil {
-				return templ_7745c5c3_Err
-			}
+				if templ_7745c5c3_Err != nil {
+					return templ_7745c5c3_Err
+				}
 			} else {
 				_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<li class=\"navbar-nav-item\"><a class=\"nav-link\" href=\"/payments\">Payments</a></li>")
-			if templ_7745c5c3_Err != nil {
-				return templ_7745c5c3_Err
-			}
+				if templ_7745c5c3_Err != nil {
+					return templ_7745c5c3_Err
+				}
 			}
 			if url == "api" {
 				_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<li class=\"navbar-nav-item\">")
@@ -241,21 +243,21 @@ func Header(category string, url string) templ.Component {
 				var templ_7745c5c3_Var13 string
 				templ_7745c5c3_Var13, templ_7745c5c3_Err = templ.JoinStringErrs(templ.CSSClasses(templ_7745c5c3_Var12).String())
 				if templ_7745c5c3_Err != nil {
-					return	templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/views/components/components.templ`, Line: 1, Col: 0}
+					return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/views/components/components.templ`, Line: 1, Col: 0}
 				}
 				_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var13))
 				if templ_7745c5c3_Err != nil {
 					return templ_7745c5c3_Err
 				}
 				_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("\" href=\"/api\">API & SDK</a></li>")
-			if templ_7745c5c3_Err != nil {
-				return templ_7745c5c3_Err
-			}
+				if templ_7745c5c3_Err != nil {
+					return templ_7745c5c3_Err
+				}
 			} else {
 				_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<li class=\"navbar-nav-item\"><a class=\"nav-link\" href=\"/api\">API & SDK</a></li>")
-			if templ_7745c5c3_Err != nil {
-				return templ_7745c5c3_Err
-			}
+				if templ_7745c5c3_Err != nil {
+					return templ_7745c5c3_Err
+				}
 			}
 			if url == "compl" {
 				_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<li class=\"navbar-nav-item\">")
@@ -274,21 +276,21 @@ func Header(category string, url string) templ.Component {
 				var templ_7745c5c3_Var15 string
 				templ_7745c5c3_Var15, templ_7745c5c3_Err = templ.JoinStringErrs(templ.CSSClasses(templ_7745c5c3_Var14).String())
 				if templ_7745c5c3_Err != nil {
-					return	templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/views/components/components.templ`, Line: 1, Col: 0}
+					return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/views/components/components.templ`, Line: 1, Col: 0}
 				}
 				_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var15))
 				if templ_7745c5c3_Err != nil {
 					return templ_7745c5c3_Err
 				}
 				_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("\" href=\"/compliance\">Compliance</a></li>")
-			if templ_7745c5c3_Err != nil {
-				return templ_7745c5c3_Err
-			}
+				if templ_7745c5c3_Err != nil {
+					return templ_7745c5c3_Err
+				}
 			} else {
 				_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<li class=\"navbar-nav-item\"><a class=\"nav-link\" href=\"/compliance\">Compliance</a></li>")
-			if templ_7745c5c3_Err != nil {
-				return templ_7745c5c3_Err
-			}
+				if templ_7745c5c3_Err != nil {
+					return templ_7745c5c3_Err
+				}
 			}
 			if url == "about" {
 				_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<li class=\"navbar-nav-item\">")
@@ -307,21 +309,21 @@ func Header(category string, url string) templ.Component {
 				var templ_7745c5c3_Var17 string
 				templ_7745c5c3_Var17, templ_7745c5c3_Err = templ.JoinStringErrs(templ.CSSClasses(templ_7745c5c3_Var16).String())
 				if templ_7745c5c3_Err != nil {
-					return	templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/views/components/components.templ`, Line: 1, Col: 0}
+					return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/views/components/components.templ`, Line: 1, Col: 0}
 				}
 				_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var17))
 				if templ_7745c5c3_Err != nil {
 					return templ_7745c5c3_Err
 				}
 				_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("\" href=\"/about\">About</a></li>")
-			if templ_7745c5c3_Err != nil {
-				return templ_7745c5c3_Err
-			}
+				if templ_7745c5c3_Err != nil {
+					return templ_7745c5c3_Err
+				}
 			} else {
 				_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<li class=\"navbar-nav-item\"><a class=\"nav-link\" href=\"/about\">About</a></li>")
-			if templ_7745c5c3_Err != nil {
-				return templ_7745c5c3_Err
-			}
+				if templ_7745c5c3_Err != nil {
+					return templ_7745c5c3_Err
+				}
 			}
 			if url == "contacts" {
 				_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<li class=\"navbar-nav-item\">")
@@ -340,54 +342,28 @@ func Header(category string, url string) templ.Component {
 				var templ_7745c5c3_Var19 string
 				templ_7745c5c3_Var19, templ_7745c5c3_Err = templ.JoinStringErrs(templ.CSSClasses(templ_7745c5c3_Var18).String())
 				if templ_7745c5c3_Err != nil {
-					return	templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/views/components/components.templ`, Line: 1, Col: 0}
+					return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/views/components/components.templ`, Line: 1, Col: 0}
 				}
 				_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var19))
 				if templ_7745c5c3_Err != nil {
 					return templ_7745c5c3_Err
 				}
 				_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("\" href=\"/contacts\">Contacts</a></li>")
-			if templ_7745c5c3_Err != nil {
-				return templ_7745c5c3_Err
-			}
+				if templ_7745c5c3_Err != nil {
+					return templ_7745c5c3_Err
+				}
 			} else {
 				_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<li class=\"navbar-nav-item\"><a class=\"nav-link\" href=\"/contacts\">Contacts</a></li>")
+				if templ_7745c5c3_Err != nil {
+					return templ_7745c5c3_Err
+				}
+			}
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</ul>")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			}
-			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</ul>")
-		if templ_7745c5c3_Err != nil {
-			return templ_7745c5c3_Err
-		}
 		}
 		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</div><!-- End Navigation --></nav><!-- End Nav --></div></div></header>")
-		if templ_7745c5c3_Err != nil {
-			return templ_7745c5c3_Err
-		}
-		if !templ_7745c5c3_IsBuffer {
-			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteTo(templ_7745c5c3_W)
-		}
-		return templ_7745c5c3_Err
-	})
-}
-
-*/
-
-func Header(category string, url string) templ.Component {
-	return templ.ComponentFunc(func(ctx context.Context, templ_7745c5c3_W io.Writer) (templ_7745c5c3_Err error) {
-		templ_7745c5c3_Buffer, templ_7745c5c3_IsBuffer := templ_7745c5c3_W.(*bytes.Buffer)
-		if !templ_7745c5c3_IsBuffer {
-			templ_7745c5c3_Buffer = templ.GetBuffer()
-			defer templ.ReleaseBuffer(templ_7745c5c3_Buffer)
-		}
-		ctx = templ.InitializeContext(ctx)
-		templ_7745c5c3_Var20 := templ.GetChildren(ctx)
-		if templ_7745c5c3_Var20 == nil {
-			templ_7745c5c3_Var20 = templ.NopComponent
-		}
-		ctx = templ.ClearChildren(ctx)
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<!-- Header --><header class=\"navbar navbar-expand-lg navbar-shadow navbar-end mb-3\"><div class=\"container\"><div class=\"navbar-nav-wrap\"><div class=\"navbar-brand-wrapper\"><!-- Logo --><a class=\"navbar-brand\" href=\"../index.html\" aria-label=\"Front\"><img class=\"navbar-brand-logo\" src=\"../assets/svg/logos/logo.svg\" alt=\"Logo\"></a><!-- End Logo --></div><!-- Toggle --><button type=\"button\" class=\"navbar-toggler ms-auto\" data-bs-toggle=\"collapse\" data-bs-target=\"#navbarNavMenuLeftAligned\" aria-label=\"Toggle navigation\" aria-expanded=\"false\" aria-controls=\"navbarNavMenuLeftAligned\"><span class=\"navbar-toggler-default\"><i class=\"bi-list\"></i></span> <span class=\"navbar-toggler-toggled\"><i class=\"bi-x\"></i></span></button><!-- End Toggle --><nav class=\"navbar-nav-wrap-col collapse navbar-collapse\" id=\"navbarNavMenuLeftAligned\"><!-- Navbar --><ul class=\"navbar-nav\"><li class=\"nav-item\"><a class=\"nav-link active\" href=\"#\">Active</a></li><!-- Dropdown --><li class=\"nav-item dropdown\"><a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"navbarLeftAlignedDropdownSubMenu\" role=\"button\" data-bs-toggle=\"dropdown\" aria-expanded=\"false\">Dropdown</a><div class=\"dropdown-menu\" aria-labelledby=\"navbarLeftAlignedDropdownSubMenu\" style=\"min-width: 230px;\"><a class=\"dropdown-item\" href=\"#\">Action</a> <a class=\"dropdown-item\" href=\"#\">Another action</a><div class=\"dropdown-divider\"></div><a class=\"dropdown-item\" href=\"#\">Something else here</a></div></li><!-- End Dropdown --><!-- Nav Item --><li class=\"nav-item\"><a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"navbarLeftAlignedMegaMenu\" role=\"button\" data-bs-toggle=\"dropdown\" aria-expanded=\"false\">Mega menu</a><div class=\"dropdown-menu w-100\" aria-labelledby=\"navbarLeftAlignedMegaMenu\"><div class=\"row\"><div class=\"col-lg-3 mb-3 mb-lg-0\"><span class=\"dropdown-header\">One</span> <a class=\"dropdown-item\" href=\"#\">One</a> <a class=\"dropdown-item\" href=\"#\">Two</a> <a class=\"dropdown-item\" href=\"#\">Three</a></div><div class=\"col-lg-3 mb-3 mb-lg-0\"><span class=\"dropdown-header\">Two</span> <a class=\"dropdown-item\" href=\"#\">One</a> <a class=\"dropdown-item\" href=\"#\">Two</a> <a class=\"dropdown-item\" href=\"#\">Three</a></div><div class=\"col-lg-3 mb-3 mb-lg-0\"><span class=\"dropdown-header\">Three</span> <a class=\"dropdown-item\" href=\"#\">One</a> <a class=\"dropdown-item\" href=\"#\">Two</a></div><div class=\"col-lg-3\"><span class=\"dropdown-header\">Four</span> <a class=\"dropdown-item\" href=\"#\">One</a> <a class=\"dropdown-item\" href=\"#\">Two</a> <a class=\"dropdown-item\" href=\"#\">Three</a></div></div></div></li><!-- End Nav Item --><li class=\"nav-item\"><a class=\"nav-link\" href=\"#\">Link</a></li></ul><!-- End Navbar --></nav></div></div></header><!-- End Header -->")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -406,9 +382,9 @@ func Head() templ.Component {
 			defer templ.ReleaseBuffer(templ_7745c5c3_Buffer)
 		}
 		ctx = templ.InitializeContext(ctx)
-		templ_7745c5c3_Var21 := templ.GetChildren(ctx)
-		if templ_7745c5c3_Var21 == nil {
-			templ_7745c5c3_Var21 = templ.NopComponent
+		templ_7745c5c3_Var20 := templ.GetChildren(ctx)
+		if templ_7745c5c3_Var20 == nil {
+			templ_7745c5c3_Var20 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
 		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<head><!-- Title --><title>Paylary  - Multi The WEB 3.0 Financial ecosystem free account to everyone</title><!-- Required Meta Tags Always Come First --><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\"><!-- Favicon --><link rel=\"shortcut icon\" href=\"./static/assets/favicon.ico\"><!-- Font --><link href=\"https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&amp;display=swap\" rel=\"stylesheet\"><!-- CSS Implementing Plugins --><link rel=\"stylesheet\" href=\"./static/assets/vendor/fontawesome/css/all.min.css\"><link rel=\"stylesheet\" href=\"./static/assets/vendor/hs-mega-menu/dist/hs-mega-menu.min.css\"><!-- CSS Implementing Plugins --><link rel=\"stylesheet\" href=\"./static/assets/vendor/fontawesome/css/all.min.css\"><link rel=\"stylesheet\" href=\"./static/assets/vendor/@fancyapps/fancybox/dist/jquery.fancybox.min.css\"><link rel=\"stylesheet\" href=\"./static/assets/vendor/aos/dist/aos.css\"><link rel=\"stylesheet\" href=\"./static/assets/vendor/slick-carousel/slick/slick.css\"><!-- CSS Front Template --><link rel=\"stylesheet\" href=\"./static/assets/css/theme.min.css\"><link rel=\"stylesheet\" href=\"./static/assets/css/custom.css\"></head>")
@@ -430,9 +406,9 @@ func BottomScripts() templ.Component {
 			defer templ.ReleaseBuffer(templ_7745c5c3_Buffer)
 		}
 		ctx = templ.InitializeContext(ctx)
-		templ_7745c5c3_Var22 := templ.GetChildren(ctx)
-		if templ_7745c5c3_Var22 == nil {
-			templ_7745c5c3_Var22 = templ.NopComponent
+		templ_7745c5c3_Var21 := templ.GetChildren(ctx)
+		if templ_7745c5c3_Var21 == nil {
+			templ_7745c5c3_Var21 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
 		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<!-- Go to Top --><a class=\"js-go-to go-to position-fixed\" href=\"javascript:;\" style=\"visibility: hidden;\" data-hs-go-to-options=\"{\n       &#34;offsetTop&#34;: 700,\n       &#34;position&#34;: {\n         &#34;init&#34;: {\n           &#34;right&#34;: 15\n         },\n         &#34;show&#34;: {\n           &#34;bottom&#34;: 15\n         },\n         &#34;hide&#34;: {\n           &#34;bottom&#34;: -15\n         }\n       }\n     }\"><i class=\"fas fa-angle-up\"></i></a><!-- End Go to Top --><!-- JS Global Compulsory  --><script src=\"./static/assets/vendor/jquery/dist/jquery.min.js\"></script><script src=\"./static/assets/vendor/jquery-migrate/dist/jquery-migrate.min.js\"></script><script src=\"./static/assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js\"></script><!-- JS Implementing Plugins --><script src=\"./static/assets/vendor/hs-header/dist/hs-header.min.js\"></script><script src=\"./static/assets/vendor/hs-go-to/dist/hs-go-to.min.js\"></script><script src=\"./static/assets/vendor/hs-unfold/dist/hs-unfold.min.js\"></script><script src=\"./static/assets/vendor/hs-mega-menu/dist/hs-mega-menu.min.js\"></script><script src=\"./static/assets/vendor/hs-show-animation/dist/hs-show-animation.min.js\"></script><script src=\"./static/assets/vendor/jquery-validation/dist/jquery.validate.min.js\"></script><!-- JS Front --><script src=\"./static/assets/js/theme.min.js\"></script><!-- JS Plugins Init. --><script>\n    $(document).on('ready', function () {\n      // INITIALIZATION OF HEADER\n      // =======================================================\n      var header = new HSHeader($('#header')).init();\n\n\n      // INITIALIZATION OF MEGA MENU\n      // =======================================================\n      var megaMenu = new HSMegaMenu($('.js-mega-menu'), {\n        desktop: {\n          position: 'left'\n        }\n      }).init();\n\n\n      // INITIALIZATION OF UNFOLD\n      // =======================================================\n      var unfold = new HSUnfold('.js-hs-unfold-invoker').init();\n\n\n      // INITIALIZATION OF SHOW ANIMATIONS\n      // =======================================================\n      $('.js-animation-link').each(function () {\n        var showAnimation = new HSShowAnimation($(this)).init();\n      });\n\n\n      // INITIALIZATION OF FORM VALIDATION\n      // =======================================================\n      $('.js-validate').each(function() {\n        $.HSCore.components.HSValidation.init($(this), {\n          rules: {\n            confirmPassword: {\n              equalTo: '#signupPassword'\n            }\n          }\n        });\n      });\n\n\n      // INITIALIZATION OF GO TO\n      // =======================================================\n      $('.js-go-to').each(function () {\n        var goTo = new HSGoTo($(this)).init();\n      });\n    });\n  </script><!-- IE Support --><script>\n    if (/MSIE \\d|Trident.*rv:/.test(navigator.userAgent)) document.write('<script src=\"./static/assets/vendor/babel-polyfill/dist/polyfill.js\"><\\/script>');\n  </script>")
@@ -454,9 +430,9 @@ func Footer() templ.Component {
 			defer templ.ReleaseBuffer(templ_7745c5c3_Buffer)
 		}
 		ctx = templ.InitializeContext(ctx)
-		templ_7745c5c3_Var23 := templ.GetChildren(ctx)
-		if templ_7745c5c3_Var23 == nil {
-			templ_7745c5c3_Var23 = templ.NopComponent
+		templ_7745c5c3_Var22 := templ.GetChildren(ctx)
+		if templ_7745c5c3_Var22 == nil {
+			templ_7745c5c3_Var22 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
 		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<footer class=\"bg-dark\"><div class=\"container\"><div class=\"space-top-2 space-bottom-1 space-bottom-lg-2\"><div class=\"row justify-content-lg-between\"><div class=\"col-lg-4 ml-lg-auto mb-5 mb-lg-0\"><!-- Logo --><!-- End Logo --><!-- Nav Link --><ul class=\"nav nav-sm nav-x-0 nav-white flex-column\"><li class=\"nav-item\"><span class=\"media\"><span class=\"text-white\">Paylary <i class=\"far fa-copyright\"></i> 2024</span></span></li><li class=\"nav-item\"><span class=\"media\"><span class=\"text-white\">support@paylary.com </span></span></li></ul><!-- End Nav Link --></div><div class=\"col-6 col-md-4 col-lg mb-5 mb-lg-0\"><h5 class=\"text-white\">Company</h5><!-- Nav Link --><ul class=\"nav nav-sm nav-x-0 nav-white flex-column\"><li class=\"nav-item\"><a class=\"nav-link\" href=\"/about\">About</a></li><li class=\"nav-item\"><a class=\"nav-link\" href=\"/contacts\">Contacts</a></li><li class=\"nav-item\"><a class=\"nav-link\" href=\"/\">B2C</a></li><li class=\"nav-item\"><a class=\"nav-link\" href=\"/b2b\">B2B</a></li><li class=\"nav-item\"></li></ul><!-- End Nav Link --></div><div class=\"col-6 col-md-4 col-lg mb-5 mb-lg-0\"><h5 class=\"text-white\">Features</h5><!-- Nav Link --><ul class=\"nav nav-sm nav-x-0 nav-white flex-column\"><li class=\"nav-item\"><a class=\"nav-link\" href=\"/wallet\">Wallet</a></li><li class=\"nav-item\"><a class=\"nav-link\" href=\"/exchange\">Exchange</a></li></ul><!-- End Nav Link --></div><div class=\"col-6 col-md-4 col-lg\"><h5 class=\"text-white\">Resources</h5><!-- Nav Link --><ul class=\"nav nav-sm nav-x-0 nav-white flex-column\"><li class=\"nav-item\"><a class=\"nav-link\" href=\"/contacts\">Support</a></li><li class=\"nav-item\"><a class=\"nav-link\" href=\"/security\">Security</a></li></ul><!-- End Nav Link --></div></div></div><hr class=\"opacity-xs my-0\"><div class=\"space-1\"><div class=\"row align-items-md-center mb-7\"><div class=\"col-md-6 mb-4 mb-md-0\"><!-- Nav Link --><ul class=\"nav nav-sm nav-white nav-x-sm align-items-center\"><li class=\"nav-item\"><a class=\"nav-link\" href=\"/privacy\">Privacy &amp; Policy</a></li><li class=\"nav-item opacity mx-3\">/</li><li class=\"nav-item\"><a class=\"nav-link\" href=\"/terms\">Terms &amp; Conditions</a></li><li class=\"nav-item opacity mx-3\">/</li><li class=\"nav-item\"><a class=\"nav-link\" href=\"/fraud\">Anti-fraud Policy</a></li></ul><!-- End Nav Link --></div><div class=\"col-md-6 text-md-right\"><ul class=\"list-inline mb-0\"><!-- Social Networks --><li class=\"list-inline-item\"><a class=\"btn btn-xs btn-icon btn-soft-light\" href=\"#\"><i class=\"fab fa-medium\"></i></a></li><li class=\"list-inline-item\"><a class=\"btn btn-xs btn-icon btn-soft-light\" href=\"#\"><i class=\"fab fa-discord\"></i></a></li><li class=\"list-inline-item\"><a class=\"btn btn-xs btn-icon btn-soft-light\" href=\"#\"><i class=\"fab fa-twitter\"></i></a></li><li class=\"list-inline-item\"><a class=\"btn btn-xs btn-icon btn-soft-light\" href=\"#\"><i class=\"fab fa-github\"></i></a></li><!-- End Social Networks --></ul></div></div></div></div></footer>")
