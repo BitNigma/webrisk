@@ -8,7 +8,7 @@ func change (status string)string {
   status = "nav-link my-active"
   return status
 }
-
+/* 
 templ Header(category string, url string){
 
 
@@ -17,14 +17,9 @@ templ Header(category string, url string){
     <div id="logoAndNavWithBSDropdown" class="container nonpadding">
       <!-- Nav -->
       <nav class="js-mega-menu navbar navbar-expand-lg hs-menu-initialized hs-menu-horizontal nonpadding">
-        <!-- Logo -->
-        <a class="navbar-brand graph" href="/" aria-label="Front">
-          <svg height="100%" viewBox="0 0 65 64" xmlns="http://www.w3.org/2000/svg" width="40%"><path fill-rule="evenodd" clip-rule="evenodd" d="M32.5 64C54.5914 64 64.5 54.0914 64.5 32C64.5 9.90862 54.5914 0 32.5 0C10.4086 0 0.5 9.90862 0.5 32C0.5 54.0914 10.4086 64 32.5 64ZM35.3857 13.5696H26.4834L24.9217 18.292H29.8662V28.2395H35.3857V13.5696ZM42.6504 40.2785C42.6504 45.8856 38.105 50.4311 32.4979 50.4311C26.8908 50.4311 22.3453 45.8856 22.3453 40.2785C22.3453 34.6714 26.8908 30.126 32.4979 30.126C38.105 30.126 42.6504 34.6714 42.6504 40.2785ZM38.0413 40.2785C38.0413 43.3401 35.5594 45.822 32.4978 45.822C29.4363 45.822 26.9544 43.3401 26.9544 40.2785C26.9544 37.217 29.4363 34.735 32.4978 34.735C35.5594 34.735 38.0413 37.217 38.0413 40.2785Z" fill="#16D629"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M32.5 64C54.5914 64 64.5 54.0914 64.5 32C64.5 9.90862 54.5914 0 32.5 0C10.4086 0 0.5 9.90862 0.5 32C0.5 54.0914 10.4086 64 32.5 64ZM35.3857 13.5696H26.4834L24.9217 18.292H29.8662V28.2395H35.3857V13.5696ZM42.6504 40.2785C42.6504 45.8856 38.105 50.4311 32.4979 50.4311C26.8908 50.4311 22.3453 45.8856 22.3453 40.2785C22.3453 34.6714 26.8908 30.126 32.4979 30.126C38.105 30.126 42.6504 34.6714 42.6504 40.2785ZM38.0413 40.2785C38.0413 43.3401 35.5594 45.822 32.4978 45.822C29.4363 45.822 26.9544 43.3401 26.9544 40.2785C26.9544 37.217 29.4363 34.735 32.4978 34.735C35.5594 34.735 38.0413 37.217 38.0413 40.2785Z" fill="currentColor"></path></svg>
-        </a>
-        <!-- End Logo -->
 
         <!-- Responsive Toggle Button -->
-        <button type="button" class="navbar-toggler btn btn-icon btn-sm rounded-circle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navBarWithBSDropdown" data-toggle="collapse" data-target="#navBarWithBSDropdown">
+        <button type="button" class="navbar-toggler btn btn-icon btn-sm rounded-circle nonpadding" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navBarWithBSDropdown" data-toggle="collapse" data-target="#navBarWithBSDropdown">
           <span class="navbar-toggler-default">
             <svg width="14" height="14" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg">
               <path fill="currentColor" d="M17.4,6.2H0.6C0.3,6.2,0,5.9,0,5.5V4.1c0-0.4,0.3-0.7,0.6-0.7h16.9c0.3,0,0.6,0.3,0.6,0.7v1.4C18,5.9,17.7,6.2,17.4,6.2z M17.4,14.1H0.6c-0.3,0-0.6-0.3-0.6-0.7V12c0-0.4,0.3-0.7,0.6-0.7h16.9c0.3,0,0.6,0.3,0.6,0.7v1.4C18,13.7,17.7,14.1,17.4,14.1z"></path>
@@ -39,7 +34,7 @@ templ Header(category string, url string){
         <!-- End Responsive Toggle Button -->
 
         <!-- Navigation -->
-        <div id="navBarWithBSDropdown" class="collapse navbar-collapse">
+        <div id="navBarWithBSDropdown" class="collapse navbar-collapse nonpadding">
   
   switch category {
     case "b2c":
@@ -175,6 +170,104 @@ templ Header(category string, url string){
   </div>
 </header>
 
+}
+ */
+
+templ Header(category string, url string) {
+  <!-- Header -->
+<header class="navbar navbar-expand-lg navbar-shadow navbar-end mb-3">
+  <div class="container">
+    <div class="navbar-nav-wrap">
+      <div class="navbar-brand-wrapper">
+        <!-- Logo -->
+        <a class="navbar-brand" href="../index.html" aria-label="Front">
+          <img class="navbar-brand-logo" src="../assets/svg/logos/logo.svg" alt="Logo">
+        </a>
+        <!-- End Logo -->
+      </div>
+
+      <!-- Toggle -->
+      <button type="button" class="navbar-toggler ms-auto" data-bs-toggle="collapse" data-bs-target="#navbarNavMenuLeftAligned" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navbarNavMenuLeftAligned">
+        <span class="navbar-toggler-default">
+          <i class="bi-list"></i>
+        </span>
+        <span class="navbar-toggler-toggled">
+          <i class="bi-x"></i>
+        </span>
+      </button>
+      <!-- End Toggle -->
+
+      <nav class="navbar-nav-wrap-col collapse navbar-collapse" id="navbarNavMenuLeftAligned">
+        <!-- Navbar -->
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" href="#">Active</a>
+          </li>
+
+          <!-- Dropdown -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarLeftAlignedDropdownSubMenu" role="button" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</a>
+
+            <div class="dropdown-menu" aria-labelledby="navbarLeftAlignedDropdownSubMenu" style="min-width: 230px;">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+          </li>
+          <!-- End Dropdown -->
+
+          <!-- Nav Item -->
+          <li class="nav-item">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarLeftAlignedMegaMenu" role="button" data-bs-toggle="dropdown" aria-expanded="false">Mega menu</a>
+
+            <div class="dropdown-menu w-100" aria-labelledby="navbarLeftAlignedMegaMenu">
+              <div class="row">
+                <div class="col-lg-3 mb-3 mb-lg-0">
+                  <span class="dropdown-header">One</span>
+
+                  <a class="dropdown-item" href="#">One</a>
+                  <a class="dropdown-item" href="#">Two</a>
+                  <a class="dropdown-item" href="#">Three</a>
+                </div>
+
+                <div class="col-lg-3 mb-3 mb-lg-0">
+                  <span class="dropdown-header">Two</span>
+
+                  <a class="dropdown-item" href="#">One</a>
+                  <a class="dropdown-item" href="#">Two</a>
+                  <a class="dropdown-item" href="#">Three</a>
+                </div>
+
+                <div class="col-lg-3 mb-3 mb-lg-0">
+                  <span class="dropdown-header">Three</span>
+
+                  <a class="dropdown-item" href="#">One</a>
+                  <a class="dropdown-item" href="#">Two</a>
+                </div>
+
+                <div class="col-lg-3">
+                  <span class="dropdown-header">Four</span>
+
+                  <a class="dropdown-item" href="#">One</a>
+                  <a class="dropdown-item" href="#">Two</a>
+                  <a class="dropdown-item" href="#">Three</a>
+                </div>
+              </div>
+            </div>
+          </li>
+          <!-- End Nav Item -->
+
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+        </ul>
+        <!-- End Navbar -->
+      </nav>
+    </div>
+  </div>
+</header>
+<!-- End Header -->
 }
 
 templ Head(){
