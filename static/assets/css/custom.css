@@ -24,6 +24,9 @@
         padding-top: 0px !important;
         margin-top: 0px !important;
     }
+    .logo {
+        width: 10% !important;
+    }
 }
 
 
@@ -37,6 +40,9 @@
     .nonpadding {
         padding-top: 0px !important;
         margin-top: 0px !important;
+    }
+    .logo {
+        width: 10% !important;
     }
 }
 
@@ -50,6 +56,9 @@
         padding-top: 0px !important;
         margin-top: 0px !important;
     }
+    .logo {
+        width: 10% !important;
+    }
 }
 
 @media only screen and (max-width: 762px) {
@@ -61,6 +70,9 @@
     .nonpadding {
         padding-top: 0px !important;
         margin-top: 0px !important;
+    }
+    .logo {
+        width: 10% !important;
     }
 
 }
@@ -75,6 +87,9 @@
         padding-top: 0px !important;
         margin-top: 0px !important;
     }
+    .logo {
+        width: 10% !important;
+    }
 
 }
 
@@ -87,6 +102,9 @@
     .nonpadding {
         padding-top: 0px !important;
         margin-top: 0px !important;
+    }
+    .logo {
+        width: 10% !important;
     }
 
 }
