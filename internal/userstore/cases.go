@@ -49,7 +49,7 @@ func (u *Store) CreateUser(c *fiber.Ctx, user model.User) error {
 		return err
 	}
 
-	query := `INSERT INTO users(id, created_at, email, encrypted_password, user_status) VALUES(@Id, @Data, @Email, @Encrypted_password, @Balance)`
+	query := `INSERT INTO users(user_id, created_at, email, encrypted_password, user_status) VALUES(@Id, @Data, @Email, @Encrypted_password, @Balance)`
 	args := pgx.NamedArgs{
 		"Id":                 user.ID,
 		"Data":               user.CreatedAt,
@@ -106,7 +106,7 @@ func (u *Store) CheckAuthUser(user model.User) error {
 func (u *Store) GetUserById(id string) error {
 
 	user := model.NewUser()
-	query := `SELECT id FROM users WHERE id=$1`
+	query := `SELECT id FROM users WHERE user_id=$1`
 
 	err := u.PG.db.QueryRow(context.Background(), query, id).Scan(&user.ID)
 	if err != nil {
