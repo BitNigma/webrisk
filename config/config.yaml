@@ -3,3 +3,6 @@ app:
   version: '1.0.0'
 
 port: ':8080'
+
+postgres:
+  url: 'postgres://jonnytomato:flints1488@localhost/c2c?sslmode=disable'

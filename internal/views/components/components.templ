@@ -1,4 +1,5 @@
 package components
+import "github.com/gofiber/fiber/v2"
 
 
 
@@ -9,7 +10,53 @@ func change (status string)string {
   return status
 }
 
-templ Header(category string, url string){
+func Cookies(c *fiber.Ctx)bool {
+cookie := c.Cookies("session_id")
+	if len(cookie) > 1 {
+		return false
+	}
+  return true
+}
+
+templ Head(){
+   
+<head>
+  <!-- Title -->
+  <title> Paylary  - Multi The WEB 3.0 Financial ecosystem
+free account to everyone</title>
+
+  <!-- Required Meta Tags Always Come First -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!-- Favicon -->
+  <link rel="shortcut icon" href="./static/assets/favicon.ico">
+
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&amp;display=swap" rel="stylesheet">
+
+ <!-- CSS Implementing Plugins -->
+  <link rel="stylesheet" href="./static/assets/vendor/fontawesome/css/all.min.css">
+  <link rel="stylesheet" href="./static/assets/vendor/hs-mega-menu/dist/hs-mega-menu.min.css">
+  <script src="https://unpkg.com/htmx.org@2.0.1"></script>
+
+  <!-- CSS Implementing Plugins -->
+  <link rel="stylesheet" href="./static/assets/vendor/fontawesome/css/all.min.css">
+
+  <link rel="stylesheet" href="./static/assets/vendor/@fancyapps/fancybox/dist/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="./static/assets/vendor/aos/dist/aos.css">
+  <link rel="stylesheet" href="./static/assets/vendor/slick-carousel/slick/slick.css">
+
+  <!-- CSS Front Template -->
+  <link rel="stylesheet" href="./static/assets/css/theme.min.css">
+  <link rel="stylesheet" href="./static/assets/css/custom.css">
+
+
+
+
+</head> 
+}
+
+templ Header(category string, url string, c *fiber.Ctx){
 
 
 <header id="headerWithBSDropdown" class="header header-sticky-top nonpadding">
@@ -110,6 +157,20 @@ templ Header(category string, url string){
               <a class="nav-link" href="/contacts">Contacts</a>
             </li>
        }
+
+    if ok := Cookies(c); ok {
+      <li class="nav-item my-button">
+              <a class="btn btn-primary btn-transition" href="/login" >Sign in</a>
+       </li>
+
+        <li class="nav-item my-button">
+              <a class="btn btn-transition" href="/signup" >Sign up</a>
+        </li>
+    }else {
+      <li class="nav-item my-button"><a href="/personal/dash" class="" style="width: 100px;"><img color="white" src="./static/assets/svg/logos/person.svg" width="30px;"></a></li>
+    }
+
+       
             
             
   </ul>
@@ -167,7 +228,20 @@ templ Header(category string, url string){
             </li>  
             }
 
-                   
+             if ok := Cookies(c); ok {
+      <li class="nav-item my-button">
+              <a class="btn btn-primary btn-transition" href="/login" >Sign in</a>
+       </li>
+
+        <li class="nav-item my-button">
+              <a class="btn btn-transition" href="/signup" >Sign up</a>
+        </li>
+
+    }else {
+      <li class="nav-item my-button"><a href="/personal/dash" class="" style="width: 100px;"><img color="white" src="./static/assets/svg/logos/person.svg" width="30px;"></a></li>
+    }
+
+                  
   </ul>
   }  
         </div>
@@ -180,42 +254,6 @@ templ Header(category string, url string){
 
 }
 
-templ Head(){
-   
-<head>
-  <!-- Title -->
-  <title> Paylary  - Multi The WEB 3.0 Financial ecosystem
-free account to everyone</title>
-
-  <!-- Required Meta Tags Always Come First -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<!-- Favicon -->
-  <link rel="shortcut icon" href="./static/assets/favicon.ico">
-
-  <!-- Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&amp;display=swap" rel="stylesheet">
-
- <!-- CSS Implementing Plugins -->
-  <link rel="stylesheet" href="./static/assets/vendor/fontawesome/css/all.min.css">
-  <link rel="stylesheet" href="./static/assets/vendor/hs-mega-menu/dist/hs-mega-menu.min.css">
-
-  <!-- CSS Implementing Plugins -->
-  <link rel="stylesheet" href="./static/assets/vendor/fontawesome/css/all.min.css">
-
-  <link rel="stylesheet" href="./static/assets/vendor/@fancyapps/fancybox/dist/jquery.fancybox.min.css">
-  <link rel="stylesheet" href="./static/assets/vendor/aos/dist/aos.css">
-  <link rel="stylesheet" href="./static/assets/vendor/slick-carousel/slick/slick.css">
-
-  <!-- CSS Front Template -->
-  <link rel="stylesheet" href="./static/assets/css/theme.min.css">
-  <link rel="stylesheet" href="./static/assets/css/custom.css">
-
-
-
-
-</head> 
-}
 
 templ BottomScripts(){
    

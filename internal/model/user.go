@@ -14,7 +14,8 @@ type User struct {
 	UserID     uuid.UUID `db:"user_id" json:"user_id" validate:"required,uuid"`
 	Email      string    `db:"title" json:"title" validate:"required,lte=255"`
 	Password   string    `db:"author" json:"author" validate:"required,lte=255"`
-	UserStatus int       `db:"book_status" json:"book_status" validate:"required,len=1"`
+	UserStatus int       `db:"status" json:"book_status" validate:"required,len=1"`
+	Balance    float32
 	UserAttrs  UserAttrs `db:"book_attrs" json:"book_attrs" validate:"required,dive"`
 }
 

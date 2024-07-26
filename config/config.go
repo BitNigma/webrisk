@@ -11,13 +11,19 @@ type (
 	// Config -.
 	Config struct {
 		App  `yaml:"app"`
-		Port string `yaml:"port" env:"HTTP_PORT"`
+		Port string `env-required:"true" yaml:"port" env:"HTTP_PORT"`
+		PG   `yaml:"postgres"`
 	}
 
 	// App -.
 	App struct {
 		Name    string `env-required:"true" yaml:"name"    env:"APP_NAME"`
 		Version string `env-required:"true" yaml:"version" env:"APP_VERSION"`
+	}
+
+	// PG -.
+	PG struct {
+		URL string `env-required:"true"                 env:"PG_URL"`
 	}
 )
 
