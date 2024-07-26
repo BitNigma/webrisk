@@ -164,7 +164,7 @@ func HandleRegister(c *fiber.Ctx) error {
 	user := model.User{
 		Email:    c.FormValue("email"),
 		Password: c.FormValue("password"),
-		Balance:  0.00,
+		Balance:  0,
 	}
 
 	store := userstore.NewStore()

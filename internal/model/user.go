@@ -15,7 +15,7 @@ type User struct {
 	Email      string    `db:"title" json:"title" validate:"required,lte=255"`
 	Password   string    `db:"author" json:"author" validate:"required,lte=255"`
 	UserStatus int       `db:"status" json:"book_status" validate:"required,len=1"`
-	Balance    float32
+	Balance    int
 	UserAttrs  UserAttrs `db:"book_attrs" json:"book_attrs" validate:"required,dive"`
 }
 
